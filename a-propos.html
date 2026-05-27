@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="À propos de THÉRA Corp — L'agence IA née à Bamako pour automatiser les PME maliennes. Notre histoire, nos valeurs, notre stack technologique."/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="À propos — THÉRA Corp"/>
+  <meta property="og:description" content="Qui sommes-nous ? L'agence de chatbots WhatsApp du Mali. Bambara, Orange Money, 48h de déploiement."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://theracorp.net/a-propos.html"/>
+  <title>À propos — THÉRA Corp | Chatbots WhatsApp Mali</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet"/></noscript>
+
+  <style>
+    :root{
+      --bn:#1B1F3B; --or:#D4AF37; --orl:#E8CC6A; --bc:#F5F5F5;
+      --np:#080A14; --vt:#25D366; --rg:#FF4444; --tr:.45s cubic-bezier(.25,.46,.45,.94);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Montserrat',sans-serif;background:var(--np);color:var(--bc);overflow-x:hidden;cursor:none;}
+    ::selection{background:var(--or);color:var(--np);}
+
+    /* ── CURSOR ── */
+    .cd{position:fixed;top:0;left:0;width:8px;height:8px;background:var(--or);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .2s,height .2s;}
+    .cr{position:fixed;top:0;left:0;width:36px;height:36px;border:1.5px solid rgba(212,175,55,.6);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all .12s ease;}
+    body.hov .cd{width:14px;height:14px;}
+    body.hov .cr{width:56px;height:56px;border-color:var(--or);}
+    @media(max-width:768px){body{cursor:auto}.cd,.cr{display:none}}
+
+    /* ── SCROLL PROGRESS ── */
+    .spb{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--or),var(--orl));z-index:10001;width:0;transition:width .1s;}
+
+    /* ── CANVAS ── */
+    #pc{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;}
+
+    /* ── NAV ── */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:80px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,10,20,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,.12);}
+    .nav-logo{font-size:1.4rem;font-weight:900;letter-spacing:.3em;color:var(--bc);text-decoration:none;}
+    .nav-logo .acc{color:var(--or);}
+    .nav-logo sup{font-size:.42rem;color:var(--or);vertical-align:super;}
+    .nav-links{display:flex;gap:32px;list-style:none;align-items:center;}
+    .nav-links a{font-size:.6rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,245,245,.55);text-decoration:none;transition:color var(--tr);position:relative;}
+    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--or);transition:width var(--tr);}
+    .nav-links a:hover,.nav-links a.active{color:var(--or);}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+    .nav-cta{background:var(--or)!important;color:var(--np)!important;padding:11px 26px!important;border-radius:2px;font-weight:900!important;}
+    .nav-cta:hover{background:var(--orl)!important;}
+    .nav-cta::after{display:none!important;}
+    .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+    .burger span{width:24px;height:2px;background:var(--or);display:block;}
+
+    /* ── PAGE HERO ── */
+    .page-hero{position:relative;z-index:1;padding:160px 56px 100px;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(212,175,55,.08) 0%,transparent 60%);pointer-events:none;}
+    .ph-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:80px;align-items:center;}
+    .breadcrumb{display:flex;align-items:center;gap:10px;margin-bottom:28px;font-size:.58rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,245,245,.25);}
+    .breadcrumb a{color:rgba(245,245,245,.25);text-decoration:none;transition:color var(--tr);}
+    .breadcrumb a:hover{color:var(--or);}
+    .breadcrumb span{color:var(--or);}
+    .ph-tag{font-size:.58rem;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--or);display:block;margin-bottom:20px;}
+    .ph-title{font-size:clamp(2.4rem,5vw,4.5rem);font-weight:900;line-height:1.08;letter-spacing:.03em;margin-bottom:24px;}
+    .ph-title em{font-style:normal;color:var(--or);}
+    .ph-desc{font-size:.92rem;font-weight:300;color:rgba(245,245,245,.55);line-height:1.9;margin-bottom:32px;max-width:520px;}
+    .ph-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,175,55,.07);border:1px solid rgba(212,175,55,.18);padding:8px 18px;border-radius:2px;font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--or);}
+
+    /* Mali Map */
+    .mali-map{display:flex;justify-content:center;align-items:center;position:relative;}
+    .mali-svg-wrap{position:relative;max-width:340px;width:100%;}
+    .mali-svg-wrap svg{width:100%;height:auto;filter:drop-shadow(0 0 24px rgba(212,175,55,.2));}
+    .bamako-pulse{position:absolute;bottom:34%;left:24%;}
+    .bp-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:28px;height:28px;border:1.5px solid rgba(212,175,55,.4);border-radius:50%;animation:bpr 2s ease-in-out infinite;}
+    .bp-ring2{animation-delay:1s;width:44px;height:44px;opacity:.5;}
+    .bp-dot{width:10px;height:10px;background:var(--or);border-radius:50%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;box-shadow:0 0 12px rgba(212,175,55,.8);}
+    .bp-label{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:.48rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--or);white-space:nowrap;}
+    @keyframes bpr{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.5}50%{transform:translate(-50%,-50%) scale(1.3);opacity:0}}
+
+    /* ── SECTIONS BASE ── */
+    section{position:relative;z-index:1;}
+    .eyebrow{font-size:.58rem;font-weight:700;letter-spacing:.45em;text-transform:uppercase;color:var(--or);display:block;text-align:center;margin-bottom:16px;}
+    .sec-title{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:900;line-height:1.18;text-align:center;}
+    .sec-title em{font-style:normal;color:var(--or);}
+    .sec-rule{width:48px;height:2px;background:var(--or);margin:18px auto 56px;}
+    .sec-sub{font-size:.88rem;font-weight:300;color:rgba(245,245,245,.5);line-height:1.85;text-align:center;max-width:540px;margin:0 auto 72px;}
+
+    /* ── MANIFESTE ── */
+    #manifeste{padding:120px 56px;background:var(--bn);overflow:hidden;position:relative;}
+    #manifeste::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(212,175,55,.05) 0%,transparent 60%);pointer-events:none;}
+    .manifeste-wrap{max-width:900px;margin:0 auto;text-align:center;}
+    .manifeste-words{font-size:clamp(1.6rem,3.5vw,2.8rem);font-weight:900;line-height:1.5;letter-spacing:.02em;}
+    .w{display:inline-block;opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;margin:0 4px;}
+    .w.gold{color:var(--or);}
+    .w.v{opacity:1;transform:translateY(0);}
+    .manifeste-sub{font-size:.92rem;font-weight:300;color:rgba(245,245,245,.5);line-height:1.9;max-width:600px;margin:40px auto 0;opacity:0;transition:opacity 1s ease .3s;}
+    .manifeste-sub.v{opacity:1;}
+
+    /* ── VALEURS ── */
+    #valeurs{padding:100px 56px;background:var(--np);}
+    .valeurs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;max-width:1100px;margin:0 auto;}
+    .flip-wrap{height:280px;perspective:1000px;cursor:pointer;}
+    .flip-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,0,.2,1);}
+    .flip-wrap:hover .flip-inner,.flip-wrap.flipped .flip-inner{transform:rotateY(180deg);}
+    .flip-face,.flip-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:40px 28px;display:flex;flex-direction:column;justify-content:center;}
+    .flip-face{background:rgba(27,31,59,.35);border:1px solid rgba(255,255,255,.05);border-bottom:2px solid transparent;transition:border-color .3s;}
+    .flip-wrap:hover .flip-face{border-bottom-color:var(--or);}
+    .flip-back{background:var(--or);transform:rotateY(180deg);border:none;}
+    .flip-icon{font-size:2.2rem;margin-bottom:18px;}
+    .flip-face h3{font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--bc);}
+    .flip-face p{font-size:.7rem;font-weight:300;color:rgba(245,245,245,.45);line-height:1.7;margin-top:10px;}
+    .flip-back h3{font-size:.78rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--np);margin-bottom:14px;}
+    .flip-back p{font-size:.78rem;font-weight:400;color:rgba(8,10,20,.8);line-height:1.8;}
+    .flip-hint{font-size:.5rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(8,10,20,.5);margin-top:18px;}
+
+    /* ── TIMELINE ── */
+    #timeline{padding:120px 56px;background:var(--bn);}
+    .tl-wrap{max-width:800px;margin:0 auto;position:relative;}
+    .tl-wrap::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(212,175,55,.3),rgba(212,175,55,.3),transparent);}
+    .tl-item{padding:0 0 56px 64px;position:relative;}
+    .tl-item:last-child{padding-bottom:0;}
+    .tl-dot{position:absolute;left:0;top:6px;width:40px;height:40px;background:var(--np);border:2px solid rgba(212,175,55,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.95rem;transition:all var(--tr);z-index:1;}
+    .tl-item:hover .tl-dot{background:var(--or);border-color:var(--or);}
+    .tl-year{font-size:.56rem;font-weight:800;letter-spacing:.35em;text-transform:uppercase;color:var(--or);display:block;margin-bottom:8px;}
+    .tl-title{font-size:1rem;font-weight:900;color:var(--bc);margin-bottom:10px;}
+    .tl-desc{font-size:.8rem;font-weight:300;color:rgba(245,245,245,.5);line-height:1.9;}
+
+    /* ── CHIFFRES ── */
+    #chiffres{padding:100px 56px;background:var(--np);position:relative;overflow:hidden;}
+    #chiffres::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(212,175,55,.05) 0%,transparent 70%);pointer-events:none;}
+    .chif-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+    .ch-item{background:rgba(27,31,59,.3);padding:52px 28px;text-align:center;border-bottom:2px solid transparent;transition:all var(--tr);}
+    .ch-item:hover{border-bottom-color:var(--or);transform:translateY(-4px);}
+    .ch-num{font-size:3rem;font-weight:900;color:var(--or);display:block;line-height:1;}
+    .ch-suf{font-size:1.4rem;color:var(--orl);}
+    .ch-lbl{font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,245,245,.35);margin-top:10px;display:block;line-height:1.6;}
+
+    /* ── STACK ── */
+    #stack{padding:100px 56px;background:var(--bn);}
+    .stack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:1100px;margin:0 auto;}
+    .sk-item{background:rgba(8,10,20,.5);padding:36px 28px;border:1px solid rgba(255,255,255,.05);display:flex;align-items:flex-start;gap:18px;transition:all var(--tr);}
+    .sk-item:hover{border-color:rgba(212,175,55,.18);transform:translateY(-3px);}
+    .sk-icon{font-size:2rem;flex-shrink:0;}
+    .sk-name{font-size:.78rem;font-weight:800;color:var(--bc);margin-bottom:8px;}
+    .sk-desc{font-size:.72rem;font-weight:300;color:rgba(245,245,245,.45);line-height:1.8;}
+
+    /* ── ACRONYME ── */
+    #acronyme{padding:80px 56px;background:rgba(27,31,59,.3);border-top:1px solid rgba(212,175,55,.06);border-bottom:1px solid rgba(212,175,55,.06);}
+    .acro-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:2px;}
+    .acro-item{padding:32px 20px;text-align:center;transition:all var(--tr);}
+    .acro-item:hover{background:rgba(212,175,55,.04);}
+    .acro-letter{font-size:2.4rem;font-weight:900;color:var(--or);display:block;line-height:1;margin-bottom:10px;}
+    .acro-word{font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--bc);display:block;margin-bottom:6px;}
+    .acro-desc{font-size:.62rem;font-weight:300;color:rgba(245,245,245,.35);line-height:1.6;}
+
+    /* ── FINAL CTA ── */
+    #cta-final{padding:120px 56px;text-align:center;background:linear-gradient(180deg,var(--bn),var(--np));position:relative;overflow:hidden;}
+    #cta-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(212,175,55,.07) 0%,transparent 65%);pointer-events:none;}
+    .cta-inner{max-width:680px;margin:0 auto;position:relative;z-index:1;}
+    .cta-inner h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;line-height:1.15;margin-bottom:16px;}
+    .cta-inner h2 em{font-style:normal;color:var(--or);}
+    .cta-inner p{font-size:.88rem;font-weight:300;color:rgba(245,245,245,.5);line-height:1.9;margin-bottom:40px;}
+    .cta-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .btn-or{background:var(--or);color:var(--np);padding:17px 40px;font-family:'Montserrat',sans-serif;font-weight:900;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border:none;border-radius:2px;cursor:pointer;transition:all var(--tr);position:relative;overflow:hidden;display:inline-block;}
+    .btn-or::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.2) 50%,transparent 70%);transform:translateX(-100%);transition:transform .6s;}
+    .btn-or:hover{background:var(--orl);box-shadow:0 16px 48px rgba(212,175,55,.4);transform:translateY(-2px);}
+    .btn-or:hover::before{transform:translateX(100%);}
+    .btn-ghost{background:transparent;color:var(--bc);padding:17px 40px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(245,245,245,.18);border-radius:2px;transition:all var(--tr);display:inline-block;}
+    .btn-ghost:hover{border-color:var(--or);color:var(--or);}
+
+    /* ── FOOTER ── */
+    footer{position:relative;z-index:1;background:var(--np);border-top:1px solid rgba(212,175,55,.1);padding:72px 56px 40px;}
+    .footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:52px;max-width:1200px;margin:0 auto 56px;}
+    .fb-brand .logo{font-size:1.5rem;font-weight:900;letter-spacing:.3em;color:var(--bc);display:block;margin-bottom:6px;}
+    .fb-brand .logo .acc{color:var(--or);}
+    .fb-brand .logo sup{font-size:.42rem;color:var(--or);vertical-align:super;}
+    .fb-brand .tagline{font-size:.6rem;font-weight:300;font-style:italic;color:rgba(245,245,245,.25);display:block;margin-bottom:18px;}
+    .fb-brand p{font-size:.76rem;font-weight:300;color:rgba(245,245,245,.33);line-height:1.85;}
+    .fb-brand .addr{font-size:.65rem;color:rgba(245,245,245,.2);margin-top:14px;line-height:1.7;}
+    .fc h4{font-size:.56rem;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--or);margin-bottom:20px;}
+    .fc ul{list-style:none;}
+    .fc li{margin-bottom:10px;}
+    .fc a{font-size:.78rem;font-weight:300;color:rgba(245,245,245,.4);text-decoration:none;transition:color var(--tr);}
+    .fc a:hover{color:var(--or);}
+    .footer-bottom{max-width:1200px;margin:0 auto;padding-top:26px;border-top:1px solid rgba(255,255,255,.04);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+    .footer-bottom p{font-size:.62rem;color:rgba(245,245,245,.2);}
+    .footer-links{display:flex;gap:22px;}
+    .footer-links a{font-size:.62rem;color:rgba(212,175,55,.35);text-decoration:none;transition:color var(--tr);}
+    .footer-links a:hover{color:var(--or);}
+
+    /* ── WA FLOAT ── */
+    .wa-float{position:fixed;bottom:32px;right:32px;z-index:9000;width:60px;height:60px;border-radius:50%;background:var(--vt);display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 8px 32px rgba(37,211,102,.4);animation:waPulse 2.5s ease-in-out infinite;}
+    .wa-float svg{width:28px;height:28px;fill:white;}
+    .wa-float:hover{transform:scale(1.1);animation:none;}
+    @keyframes waPulse{0%,100%{box-shadow:0 8px 32px rgba(37,211,102,.4)}50%{box-shadow:0 8px 48px rgba(37,211,102,.65),0 0 0 12px rgba(37,211,102,.07)}}
+    .back-top{position:fixed;bottom:32px;left:32px;z-index:9000;width:44px;height:44px;border-radius:2px;background:rgba(27,31,59,.9);border:1px solid rgba(212,175,55,.2);display:flex;align-items:center;justify-content:center;color:var(--or);font-size:1rem;text-decoration:none;opacity:0;pointer-events:none;transition:all var(--tr);}
+    .back-top.vis{opacity:1;pointer-events:all;}
+    .back-top:hover{background:var(--or);color:var(--np);}
+
+    /* ── COOKIES ── */
+    .cookie-bar{position:fixed;bottom:0;left:0;right:0;z-index:8000;background:rgba(8,10,20,.97);backdrop-filter:blur(16px);border-top:1px solid rgba(212,175,55,.14);padding:20px 56px;display:flex;align-items:center;justify-content:space-between;gap:24px;transition:transform .5s ease;}
+    .cookie-bar.hidden{transform:translateY(100%);}
+    .cookie-txt{font-size:.72rem;font-weight:300;color:rgba(245,245,245,.5);}
+    .cookie-txt a{color:var(--or);text-decoration:none;}
+    .cookie-btns{display:flex;gap:10px;flex-shrink:0;}
+    .ck-accept{background:var(--or);color:var(--np);padding:10px 24px;font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;}
+    .ck-refuse{background:transparent;color:rgba(245,245,245,.35);padding:10px 20px;font-family:'Montserrat',sans-serif;font-size:.58rem;border:1px solid rgba(255,255,255,.1);border-radius:2px;cursor:pointer;}
+
+    /* ── REVEAL ── */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+    .reveal.v{opacity:1;transform:translateY(0);}
+    .d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}.d4{transition-delay:.38s}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px){
+      nav{padding:0 24px;}.nav-links{display:none;}.burger{display:flex;}
+      .page-hero{padding:120px 24px 72px;}
+      .ph-inner{grid-template-columns:1fr;gap:48px;}
+      .mali-map{order:-1;}
+      #manifeste,#valeurs,#timeline,#chiffres,#stack,#acronyme,#cta-final{padding:72px 24px;}
+      .valeurs-grid{grid-template-columns:1fr 1fr;}
+      .chif-grid{grid-template-columns:1fr 1fr;}
+      .stack-grid{grid-template-columns:1fr;}
+      .acro-inner{grid-template-columns:repeat(3,1fr);}
+      footer{padding:56px 24px 32px;}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+      .footer-bottom{flex-direction:column;text-align:center;}
+      .cookie-bar{padding:16px 24px;flex-direction:column;align-items:flex-start;}
+      .cta-group{flex-direction:column;align-items:center;}
+    }
+    @media(max-width:480px){
+      .valeurs-grid{grid-template-columns:1fr;}
+      .chif-grid{grid-template-columns:1fr;}
+      .acro-inner{grid-template-columns:repeat(2,1fr);}
+      .footer-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="cd" id="cDot"></div>
+<div class="cr" id="cRing"></div>
+<div class="spb" id="spb"></div>
+<canvas id="pc"></canvas>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/22391421413" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<a href="#" class="back-top" id="backTop">↑</a>
+
+<!-- COOKIES -->
+<div class="cookie-bar" id="cookieBar">
+  <p class="cookie-txt">🍪 Cookies essentiels uniquement. <a href="privacy-policy.html">En savoir plus</a></p>
+  <div class="cookie-btns">
+    <button class="ck-accept" onclick="acceptCookies()">Accepter</button>
+    <button class="ck-refuse" onclick="refuseCookies()">Refuser</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">TH<span class="acc">É</span>RA<sup>CORP</sup></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="index.html#tarifs">Tarifs</a></li>
+    <li><a href="a-propos.html" class="active">À propos</a></li>
+    <li><a href="devis.html">Devis</a></li>
+    <li><a href="contact.html" class="nav-cta">Démarrer</a></li>
+  </ul>
+  <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div class="page-hero">
+  <div class="ph-inner">
+    <div class="ph-text">
+      <div class="breadcrumb">
+        <a href="index.html">Accueil</a>
+        <span>→</span>
+        <span>À propos</span>
+      </div>
+      <span class="ph-tag">Notre histoire · Mali 🇲🇱</span>
+      <h1 class="ph-title">L'IA au service<br/>de l'<em>Afrique</em><br/>d'aujourd'hui.</h1>
+      <p class="ph-desc">THÉRA Corp est née d'un constat simple : les PME maliennes méritent les mêmes outils que les grandes entreprises mondiales — adaptés à leur langue, à leur façon de payer, à leur réalité.</p>
+      <div class="ph-badge">📍 Yirimadio, Village de Wara — Bamako, Mali</div>
+    </div>
+    <div class="mali-map">
+      <div class="mali-svg-wrap">
+        <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="maliGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#1B1F3B;stop-opacity:1"/>
+              <stop offset="100%" style="stop-color:#080A14;stop-opacity:1"/>
+            </linearGradient>
+          </defs>
+          <path d="M 60 30 L 100 25 L 180 20 L 240 30 L 300 20 L 360 40 L 370 80 L 350 100 L 360 130 L 340 160 L 300 170 L 280 200 L 260 240 L 240 280 L 210 320 L 190 330 L 170 310 L 150 280 L 130 260 L 100 240 L 80 200 L 60 180 L 40 160 L 30 120 L 40 80 Z"
+            fill="url(#maliGrad)" stroke="#D4AF37" stroke-width="1.5" opacity="0.9"/>
+          <path d="M 60 30 L 100 25 L 180 20 L 240 30 L 300 20 L 360 40 L 370 80 L 350 100 L 330 90 L 290 100 L 260 120 L 230 110 L 200 120 L 160 110 L 130 120 L 100 110 L 70 120 L 50 110 L 40 80 Z"
+            fill="rgba(212,175,55,0.06)" stroke="none"/>
+        </svg>
+        <!-- Bamako pulsant -->
+        <div class="bamako-pulse">
+          <div class="bp-ring"></div>
+          <div class="bp-ring bp-ring2"></div>
+          <div class="bp-dot"></div>
+          <div class="bp-label">Bamako</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MANIFESTE ═══ -->
+<section id="manifeste">
+  <div class="manifeste-wrap">
+    <div class="manifeste-words" id="manifesteWords">
+      <span class="w">Une</span><span class="w gold">pharmacie</span><span class="w">à</span><span class="w">Bamako,</span>
+      <span class="w">un</span><span class="w gold">restaurant</span><span class="w">à</span><span class="w">Ségou,</span>
+      <span class="w">une</span><span class="w gold">boutique</span><span class="w">à</span><span class="w">Sikasso</span>
+      <span class="w">—</span><span class="w">chaque</span><span class="w">business</span><span class="w">malien</span>
+      <span class="w">mérite</span><span class="w">un</span><span class="w gold">assistant</span><span class="w gold">intelligent.</span>
+    </div>
+    <p class="manifeste-sub">
+      C'est pourquoi nous avons créé THÉRA Corp — pour proposer des chatbots WhatsApp qui parlent Bambara, acceptent Orange Money, et fonctionnent même quand la connexion est instable. Une technologie de classe mondiale, pensée pour le Mali.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ VALEURS ═══ -->
+<section id="valeurs">
+  <span class="eyebrow reveal">Ce en quoi nous croyons</span>
+  <h2 class="sec-title reveal">Nos <em>valeurs</em></h2>
+  <div class="sec-rule"></div>
+  <div class="valeurs-grid">
+    <div class="flip-wrap reveal d1" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-face">
+          <span class="flip-icon">🌍</span>
+          <h3>Africa First</h3>
+          <p>Les solutions globales ne marchent pas toutes au Mali. On construit pour nos réalités.</p>
+        </div>
+        <div class="flip-back">
+          <h3>Africa First</h3>
+          <p>Bambara natif, Orange Money intégré, serveurs résilients aux coupures. On pense Mali d'abord, tech ensuite.</p>
+          <span class="flip-hint">↩ Retourner</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-wrap reveal d2" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-face">
+          <span class="flip-icon">🤝</span>
+          <h3>Honnêteté</h3>
+          <p>On ne promet que ce qu'on peut livrer. On ne vend pas de rêves, on livre des résultats mesurables.</p>
+        </div>
+        <div class="flip-back">
+          <h3>Honnêteté</h3>
+          <p>Tarifs transparents. Chiffres réels. Zéro faux témoignage. Zéro stat inventée. La confiance se gagne avec la vérité.</p>
+          <span class="flip-hint">↩ Retourner</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-wrap reveal d3" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-face">
+          <span class="flip-icon">⚡</span>
+          <h3>Rapidité</h3>
+          <p>48h du premier appel au bot en ligne. Pas de semaines d'attente, pas de complexité inutile.</p>
+        </div>
+        <div class="flip-back">
+          <h3>Rapidité</h3>
+          <p>Votre temps est de l'argent. On configure, on teste, on déploie. Votre bot travaille pendant que vous vous concentrez sur votre business.</p>
+          <span class="flip-hint">↩ Retourner</span>
+        </div>
+      </div>
+    </div>
+    <div class="flip-wrap reveal d4" onclick="this.classList.toggle('flipped')">
+      <div class="flip-inner">
+        <div class="flip-face">
+          <span class="flip-icon">🛡️</span>
+          <h3>Résilience</h3>
+          <p>Le R de THÉRA. Des solutions qui fonctionnent malgré les aléas du terrain malien.</p>
+        </div>
+        <div class="flip-back">
+          <h3>Résilience</h3>
+          <p>Coupure d'internet ? Le système bascule sur SMS. Serveurs en Europe pour garantir la disponibilité. Votre bot ne s'arrête jamais.</p>
+          <span class="flip-hint">↩ Retourner</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TIMELINE ═══ -->
+<section id="timeline">
+  <span class="eyebrow reveal">Notre parcours</span>
+  <h2 class="sec-title reveal">Comment <em>THÉRA Corp</em> est née</h2>
+  <div class="sec-rule"></div>
+  <div class="tl-wrap">
+    <div class="tl-item reveal">
+      <div class="tl-dot">💡</div>
+      <span class="tl-year">Le constat</span>
+      <div class="tl-title">Le problème que personne ne résolvait</div>
+      <p class="tl-desc">Les PME maliennes utilisent WhatsApp comme principal canal de vente et de communication. Pourtant, elles répondent manuellement, perdent des clients la nuit, et n'ont accès à aucun outil d'automatisation adapté à leur réalité — ni au Bambara, ni à Orange Money.</p>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-dot">🔬</div>
+      <span class="tl-year">La recherche</span>
+      <div class="tl-title">L'ingénierie au service du Mali</div>
+      <p class="tl-desc">Ingénieur informaticien de formation, le fondateur de THÉRA Corp commence à assembler les meilleures technologies mondiales — Claude AI, WhatsApp Business API, CinetPay — pour construire une solution pensée pour le marché malien. L'objectif : déployer en 48h, fonctionner en Bambara, encaisser via Orange Money.</p>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-dot">🚀</div>
+      <span class="tl-year">Le lancement</span>
+      <div class="tl-title">THÉRA Corp ouvre ses portes</div>
+      <p class="tl-desc">Depuis Yirimadio, Village de Wara à Bamako, THÉRA Corp commence à proposer ses premiers chatbots WhatsApp aux PME maliennes. Pharmacies, restaurants, boutiques — chaque secteur reçoit une solution sur mesure, avec les tarifs adaptés à la réalité économique locale.</p>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-dot">🌍</div>
+      <span class="tl-year">La vision</span>
+      <div class="tl-title">Au-delà de Bamako — tout le Mali</div>
+      <p class="tl-desc">L'ambition de THÉRA Corp dépasse Bamako. Une pharmacie à Mopti, un restaurant à Sikasso, un marché à Ségou — chaque PME malienne mérite un assistant intelligent. La technologie n'est plus un privilège des grandes villes ou des grandes entreprises.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CHIFFRES ═══ -->
+<section id="chiffres">
+  <span class="eyebrow reveal">Ce que nous garantissons</span>
+  <h2 class="sec-title reveal">THÉRA Corp <em>en chiffres</em></h2>
+  <div class="sec-rule"></div>
+  <div class="chif-grid">
+    <div class="ch-item reveal d1">
+      <span class="ch-num">48<span class="ch-suf">h</span></span>
+      <span class="ch-lbl">Déploiement maximum garanti</span>
+    </div>
+    <div class="ch-item reveal d2">
+      <span class="ch-num">24<span class="ch-suf">/7</span></span>
+      <span class="ch-lbl">Disponibilité de votre bot</span>
+    </div>
+    <div class="ch-item reveal d3">
+      <span class="ch-num">2<span class="ch-suf">+</span></span>
+      <span class="ch-lbl">Langues nativement (Fr · Bambara)</span>
+    </div>
+    <div class="ch-item reveal d4">
+      <span class="ch-num">99<span class="ch-suf">%</span></span>
+      <span class="ch-lbl">Uptime serveur Hetzner</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ACRONYME ═══ -->
+<section id="acronyme">
+  <div class="acro-inner">
+    <div class="acro-item reveal d1">
+      <span class="acro-letter">T</span>
+      <span class="acro-word">Technology</span>
+      <span class="acro-desc">Les meilleures technologies mondiales au service du Mali</span>
+    </div>
+    <div class="acro-item reveal d2">
+      <span class="acro-letter">H</span>
+      <span class="acro-word">Heritage</span>
+      <span class="acro-desc">Ancrés dans la culture et les langues maliennes</span>
+    </div>
+    <div class="acro-item reveal d3">
+      <span class="acro-letter">É</span>
+      <span class="acro-word">Éngineering</span>
+      <span class="acro-desc">De vraie ingénierie locale, pas du copier-coller</span>
+    </div>
+    <div class="acro-item reveal d4">
+      <span class="acro-letter">R</span>
+      <span class="acro-word">Resilience</span>
+      <span class="acro-desc">Des solutions qui fonctionnent malgré les aléas</span>
+    </div>
+    <div class="acro-item reveal d4">
+      <span class="acro-letter">A</span>
+      <span class="acro-word">Africa</span>
+      <span class="acro-desc">Conçu pour l'Afrique, déployé d'abord au Mali</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STACK ═══ -->
+<section id="stack">
+  <span class="eyebrow reveal">Technologies</span>
+  <h2 class="sec-title reveal">Notre stack <em>de pointe</em></h2>
+  <div class="sec-rule"></div>
+  <div class="stack-grid">
+    <div class="sk-item reveal d1">
+      <span class="sk-icon">🤖</span>
+      <div>
+        <div class="sk-name">Claude AI — Anthropic</div>
+        <div class="sk-desc">Le cerveau du chatbot. Intelligence artificielle de dernière génération pour des réponses naturelles, contextuelles et adaptées au Bambara.</div>
+      </div>
+    </div>
+    <div class="sk-item reveal d2">
+      <span class="sk-icon">💬</span>
+      <div>
+        <div class="sk-name">WhatsApp Business API</div>
+        <div class="sk-desc">API officielle Meta. Fiable, scalable, conforme aux politiques Meta. Vos clients restent sur l'app qu'ils utilisent déjà.</div>
+      </div>
+    </div>
+    <div class="sk-item reveal d3">
+      <span class="sk-icon">🎙️</span>
+      <div>
+        <div class="sk-name">Whisper AI — OpenAI</div>
+        <div class="sk-desc">Transcription des messages vocaux en texte. Vos clients peuvent parler au bot comme ils parleraient à un humain.</div>
+      </div>
+    </div>
+    <div class="sk-item reveal d1">
+      <span class="sk-icon">🟠</span>
+      <div>
+        <div class="sk-name">CinetPay — Orange Money & Wave</div>
+        <div class="sk-desc">Paiements Orange Money et Wave directement dans la conversation WhatsApp. Zéro redirection, zéro friction, confirmation instantanée.</div>
+      </div>
+    </div>
+    <div class="sk-item reveal d2">
+      <span class="sk-icon">🛡️</span>
+      <div>
+        <div class="sk-name">Hetzner — Allemagne</div>
+        <div class="sk-desc">Serveurs haute disponibilité en Europe. 99,9% d'uptime garanti malgré les aléas de connectivité locale.</div>
+      </div>
+    </div>
+    <div class="sk-item reveal d3">
+      <span class="sk-icon">📱</span>
+      <div>
+        <div class="sk-name">Africa's Talking — SMS Fallback</div>
+        <div class="sk-desc">Bascule automatique sur SMS quand WhatsApp n'est pas accessible. Votre bot ne s'arrête jamais, même en cas de coupure data.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA FINAL ═══ -->
+<section id="cta-final">
+  <div class="cta-inner">
+    <h2 class="reveal">Vous connaissez<br/>qui nous sommes.<br/><em>Et si on se parlait ?</em></h2>
+    <p class="reveal">30 minutes sur WhatsApp. On analyse votre business, on vous propose la formule adaptée. Votre bot est en ligne 48h plus tard.</p>
+    <div class="cta-group reveal">
+      <a href="devis.html" class="btn-or">Obtenir mon devis gratuit →</a>
+      <a href="contact.html" class="btn-ghost">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="fb-brand">
+      <span class="logo">TH<span class="acc">É</span>RA<sup>CORP</sup></span>
+      <span class="tagline">"L'IA qui travaille pendant que vous dormez"</span>
+      <p>Agence spécialisée en chatbots WhatsApp et IA pour les PME du Mali. Bambara · Orange Money · 24h/24.</p>
+      <div class="addr">📍 Yirimadio, Village de Wara<br/>Bamako · Mali 🇲🇱<br/>+223 91 42 14 13</div>
+    </div>
+    <div class="fc">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#tarifs">Tarifs</a></li>
+        <li><a href="devis.html">Devis gratuit</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html?sector=pharma">Bot Pharmacie</a></li>
+        <li><a href="services.html?sector=resto">Bot Restaurant</a></li>
+        <li><a href="services.html?sector=boutique">Bot Boutique</a></li>
+        <li><a href="services.html?sector=marche">Pack Marché</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+22391421413">+223 91 42 14 13</a></li>
+        <li><a href="mailto:sekoubabathera@theracorp.net">Email</a></li>
+        <li><a href="privacy-policy.html">Confidentialité</a></li>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 THÉRA Corp — theracorp.net · Mali 🇲🇱. Tous droits réservés.</p>
+    <div class="footer-links">
+      <a href="privacy-policy.html">Confidentialité</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── CURSOR ── */
+const cD=document.getElementById('cDot'),cR=document.getElementById('cRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cD.style.left=mx+'px';cD.style.top=my+'px';});
+(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;cR.style.left=rx+'px';cR.style.top=ry+'px';requestAnimationFrame(a);})();
+document.querySelectorAll('a,button,.flip-wrap,.ch-item,.sk-item,.acro-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('hov'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
+});
+
+/* ── SCROLL ── */
+window.addEventListener('scroll',()=>{
+  const p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
+  document.getElementById('spb').style.width=p+'%';
+  document.getElementById('backTop').classList.toggle('vis',window.scrollY>400);
+});
+
+/* ── NAV MOBILE ── */
+function toggleMenu(){
+  const nl=document.getElementById('navLinks');nl.classList.toggle('open');
+  if(!document.getElementById('_mns')){const s=document.createElement('style');s.id='_mns';s.textContent='#navLinks.open{display:flex!important;flex-direction:column;position:fixed;top:80px;left:0;right:0;bottom:0;background:rgba(8,10,20,.98);backdrop-filter:blur(20px);align-items:center;justify-content:center;gap:32px;z-index:999}#navLinks.open a{font-size:1.1rem!important}';document.head.appendChild(s);}
+}
+
+/* ── CANVAS ── */
+const cv=document.getElementById('pc'),cx=cv.getContext('2d');
+function rC(){cv.width=window.innerWidth;cv.height=window.innerHeight;}rC();window.addEventListener('resize',rC);
+const pts=[];for(let i=0;i<80;i++)pts.push({x:Math.random()*window.innerWidth,y:Math.random()*window.innerHeight,s:Math.random()*1.6+.3,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,a:Math.random()*.4+.08,p:Math.random()*Math.PI*2});
+(function aP(){cx.clearRect(0,0,cv.width,cv.height);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.p+=.015;if(p.x<0||p.x>cv.width)p.vx*=-1;if(p.y<0||p.y>cv.height)p.vy*=-1;cx.beginPath();cx.arc(p.x,p.y,p.s,0,Math.PI*2);cx.fillStyle=`rgba(212,175,55,${p.a*(.7+.3*Math.sin(p.p))})`;cx.fill();});requestAnimationFrame(aP);})();
+
+/* ── MANIFESTE REVEAL ── */
+const mObs=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      const words=e.target.querySelectorAll('.w');
+      words.forEach((w,i)=>setTimeout(()=>w.classList.add('v'),i*80));
+      const sub=e.target.closest('section').querySelector('.manifeste-sub');
+      if(sub) setTimeout(()=>sub.classList.add('v'),words.length*80+200);
+      mObs.unobserve(e.target);
+    }
+  });
+},{threshold:.3});
+const mw=document.getElementById('manifesteWords');
+if(mw) mObs.observe(mw);
+
+/* ── REVEAL ── */
+const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');ro.unobserve(e.target);}});},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+/* ── COOKIES ── */
+if(localStorage.getItem('tc_cookies'))document.getElementById('cookieBar').classList.add('hidden');
+function acceptCookies(){localStorage.setItem('tc_cookies','accepted');document.getElementById('cookieBar').classList.add('hidden');}
+function refuseCookies(){localStorage.setItem('tc_cookies','refused');document.getElementById('cookieBar').classList.add('hidden');}
+</script>
+</body>
+</html>

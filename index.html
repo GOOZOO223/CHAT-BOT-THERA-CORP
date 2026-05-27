@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="THÉRA Corp — Chatbots WhatsApp IA pour pharmacies, restaurants et boutiques au Mali. Automatisez votre business en 48h. Orange Money, Bambara, 24h/24."/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="keywords" content="chatbot whatsapp mali, automatisation bamako, intelligence artificielle mali, théra corp, orange money chatbot, bambara bot"/>
+  <meta property="og:title" content="THÉRA Corp — L'IA qui travaille pendant que vous dormez"/>
+  <meta property="og:description" content="Votre business perd des clients en ce moment. Automatisez votre WhatsApp en 48h."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://theracorp.net"/>
+  <title>THÉRA Corp — L'IA qui travaille pendant que vous dormez</title>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"LocalBusiness","name":"THÉRA Corp","description":"Agence de chatbots WhatsApp et intelligence artificielle pour PME maliennes","url":"https://theracorp.net","telephone":"+22391421413","email":"sekoubabathera@theracorp.net","address":{"@type":"PostalAddress","streetAddress":"Yirimadio, Village de Wara","addressLocality":"Bamako","addressCountry":"ML"},"geo":{"@type":"GeoCoordinates","latitude":"12.6392","longitude":"-8.0029"},"openingHours":"Mo-Fr 08:00-18:00","priceRange":"$$","serviceArea":"Mali","hasOfferCatalog":{"@type":"OfferCatalog","name":"Chatbots WhatsApp Mali"}}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet"/></noscript>
+
+  <style>
+    :root{
+      --bn:#1B1F3B; --or:#D4AF37; --orl:#E8CC6A; --bc:#F5F5F5;
+      --np:#080A14; --vt:#25D366; --rg:#FF4444; --tr:.45s cubic-bezier(.25,.46,.45,.94);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Montserrat',sans-serif;background:var(--np);color:var(--bc);overflow-x:hidden;cursor:none;}
+    ::selection{background:var(--or);color:var(--np);}
+
+    /* ── CURSOR ── */
+    .cd{position:fixed;top:0;left:0;width:8px;height:8px;background:var(--or);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .2s,height .2s;}
+    .cr{position:fixed;top:0;left:0;width:36px;height:36px;border:1.5px solid rgba(212,175,55,.6);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all .12s ease;}
+    body.hov .cd{width:14px;height:14px;}
+    body.hov .cr{width:56px;height:56px;border-color:var(--or);}
+    @media(max-width:768px){body{cursor:auto}.cd,.cr{display:none}}
+
+    /* ── SCROLL PROGRESS ── */
+    .spb{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--or),var(--orl));z-index:10001;width:0;transition:width .1s;}
+
+    /* ── CANVAS ── */
+    #pc{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;}
+
+    /* ── URGENCE BAND ── */
+    .urgence-band{position:relative;z-index:2;background:linear-gradient(90deg,#1a0000,var(--rg),#1a0000);background-size:200%;animation:bandSlide 4s linear infinite;padding:11px 24px;text-align:center;font-size:.58rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#fff;margin-top:80px;}
+    .urgence-band .dot{display:inline-block;width:6px;height:6px;background:#fff;border-radius:50%;margin:0 12px;vertical-align:middle;animation:bl 1.2s infinite;}
+    @keyframes bandSlide{0%{background-position:0%}100%{background-position:200%}}
+    @keyframes bl{0%,100%{opacity:1}50%{opacity:.2}}
+
+    /* ── NAV ── */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:80px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,10,20,0);backdrop-filter:blur(0);transition:all .5s;}
+    nav.scr{background:rgba(8,10,20,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,.12);}
+    .nav-logo{font-size:1.4rem;font-weight:900;letter-spacing:.3em;color:var(--bc);text-decoration:none;}
+    .nav-logo .acc{color:var(--or);}
+    .nav-logo sup{font-size:.42rem;color:var(--or);vertical-align:super;}
+    .nav-links{display:flex;gap:32px;list-style:none;align-items:center;}
+    .nav-links a{font-size:.6rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,245,245,.55);text-decoration:none;transition:color var(--tr);position:relative;}
+    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--or);transition:width var(--tr);}
+    .nav-links a:hover,.nav-links a.active{color:var(--or);}
+    .nav-links a:hover::after{width:100%;}
+    .nav-cta{background:var(--or)!important;color:var(--np)!important;padding:11px 26px!important;border-radius:2px;font-weight:900!important;}
+    .nav-cta:hover{background:var(--orl)!important;}
+    .nav-cta::after{display:none!important;}
+    .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+    .burger span{width:24px;height:2px;background:var(--or);display:block;}
+
+    /* ── HERO ── */
+    #hero{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;padding:100px 56px 80px;overflow:hidden;}
+    .hero-glow{position:absolute;top:20%;left:30%;width:700px;height:700px;background:radial-gradient(circle,rgba(212,175,55,.12) 0%,transparent 70%);pointer-events:none;animation:orbe 8s ease-in-out infinite;}
+    @keyframes orbe{0%,100%{transform:scale(1)}50%{transform:scale(1.06) translate(20px,-20px)}}
+    .hero-line-left{position:absolute;left:56px;top:15%;bottom:15%;width:1px;background:linear-gradient(to bottom,transparent,rgba(212,175,55,.3),transparent);}
+    .hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center;}
+
+    /* Hero Text */
+    .hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(212,175,55,.07);border:1px solid rgba(212,175,55,.22);padding:9px 20px;border-radius:2px;margin-bottom:36px;opacity:0;animation:fadeUp .8s .2s ease forwards;}
+    .hero-badge span{font-size:.58rem;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--or);}
+    .live-dot{width:7px;height:7px;border-radius:50%;background:var(--rg);flex-shrink:0;animation:lp 1.4s infinite;}
+    @keyframes lp{0%,100%{box-shadow:0 0 0 0 rgba(255,68,68,.7)}50%{box-shadow:0 0 0 6px rgba(255,68,68,0)}}
+    .hero-title{font-size:clamp(2.6rem,5vw,5rem);font-weight:900;line-height:1.06;letter-spacing:.04em;opacity:0;animation:fadeUp .9s .35s ease forwards;}
+    .hero-title .gold{color:var(--or);display:block;}
+    .hero-title .dim{display:block;font-weight:300;font-size:55%;color:rgba(245,245,245,.38);letter-spacing:.1em;margin-top:10px;}
+    .hero-tw{font-size:.95rem;font-weight:300;color:rgba(245,245,245,.6);margin:28px 0 0;max-width:500px;line-height:1.9;min-height:3em;opacity:0;animation:fadeUp .8s .6s ease forwards;}
+    .typed{color:var(--bc);font-weight:700;}
+    .cb{display:inline-block;width:2px;height:1em;background:var(--or);vertical-align:text-bottom;animation:cblink .75s infinite;}
+    @keyframes cblink{0%,100%{opacity:1}50%{opacity:0}}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px;opacity:0;animation:fadeUp .8s .85s ease forwards;}
+    .btn-or{background:var(--or);color:var(--np);padding:17px 40px;font-family:'Montserrat',sans-serif;font-weight:900;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border:none;border-radius:2px;cursor:pointer;transition:all var(--tr);position:relative;overflow:hidden;}
+    .btn-or::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.2) 50%,transparent 70%);transform:translateX(-100%);transition:transform .6s ease;}
+    .btn-or:hover{background:var(--orl);box-shadow:0 16px 48px rgba(212,175,55,.4);transform:translateY(-2px);}
+    .btn-or:hover::before{transform:translateX(100%);}
+    .btn-ghost{background:transparent;color:var(--bc);padding:17px 40px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(245,245,245,.18);border-radius:2px;transition:all var(--tr);}
+    .btn-ghost:hover{border-color:var(--or);color:var(--or);}
+    .hero-trust{display:flex;align-items:center;gap:16px;margin-top:28px;opacity:0;animation:fadeUp .8s 1.05s ease forwards;}
+    .ht-item{font-size:.6rem;font-weight:600;color:rgba(245,245,245,.3);display:flex;align-items:center;gap:6px;}
+    .ht-item::before{content:'✓';color:var(--vt);font-weight:900;}
+    .ht-sep{width:1px;height:14px;background:rgba(245,245,245,.12);}
+
+    /* Hero Phone Mockup */
+    .hero-phone{opacity:0;animation:fadeUp .9s .5s ease forwards;}
+    .phone-wrap{position:relative;display:flex;justify-content:center;}
+    .phone-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:320px;height:420px;background:radial-gradient(circle,rgba(37,211,102,.1) 0%,transparent 70%);pointer-events:none;}
+    .phone-frame{width:280px;background:#111B21;border-radius:28px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.07);position:relative;}
+    .phone-notch{background:#000;height:12px;width:80px;border-radius:0 0 12px 12px;margin:0 auto;}
+    .wa-header{background:#1F2C34;padding:12px 16px;display:flex;align-items:center;gap:12px;}
+    .wa-av{width:40px;height:40px;background:linear-gradient(135deg,var(--or),#8B6914);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+    .wa-info-name{font-size:.75rem;font-weight:700;color:#E9EDEF;}
+    .wa-info-status{font-size:.6rem;color:var(--vt);}
+    .wa-body{background:#0B141A;min-height:380px;padding:12px;display:flex;flex-direction:column;gap:8px;overflow:hidden;}
+    .wm{max-width:82%;padding:8px 11px;border-radius:8px;font-size:.68rem;line-height:1.55;opacity:0;transform:translateY(8px);transition:all .35s ease;}
+    .wm.show{opacity:1;transform:translateY(0);}
+    .wm.recv{background:#202C33;color:#E9EDEF;border-radius:8px 8px 8px 2px;align-self:flex-start;}
+    .wm.sent{background:#005C4B;color:#E9EDEF;border-radius:8px 8px 2px 8px;align-self:flex-end;}
+    .wm-time{font-size:.52rem;color:rgba(255,255,255,.3);display:block;text-align:right;margin-top:3px;}
+    .wm-typing{display:flex;align-items:center;gap:4px;padding:10px 12px;background:#202C33;border-radius:8px 8px 8px 2px;align-self:flex-start;width:48px;opacity:0;transition:opacity .3s;}
+    .wm-typing.show{opacity:1;}
+    .wm-typing span{width:5px;height:5px;background:rgba(255,255,255,.4);border-radius:50%;animation:td 1.1s infinite;}
+    .wm-typing span:nth-child(2){animation-delay:.2s;}
+    .wm-typing span:nth-child(3){animation-delay:.4s;}
+    @keyframes td{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+    .phone-badge{position:absolute;top:-12px;right:-12px;background:var(--or);color:var(--np);font-size:.52rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase;padding:6px 12px;border-radius:2px;white-space:nowrap;}
+
+    /* Hero Stats */
+    .hero-stats{border-top:1px solid rgba(212,175,55,.1);display:flex;margin-top:56px;opacity:0;animation:fadeUp .8s 1.2s ease forwards;}
+    .hs{flex:1;padding:28px 0;text-align:center;border-right:1px solid rgba(212,175,55,.08);}
+    .hs:last-child{border-right:none;}
+    .hs-n{font-size:2rem;font-weight:900;color:var(--or);display:block;line-height:1;}
+    .hs-l{font-size:.55rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,245,245,.3);margin-top:6px;display:block;}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+    /* ── ACRONYME ── */
+    .acro-bar{position:relative;z-index:1;background:rgba(27,31,59,.5);border-top:1px solid rgba(212,175,55,.07);border-bottom:1px solid rgba(212,175,55,.07);padding:18px 56px;text-align:center;font-size:.56rem;font-weight:600;letter-spacing:.45em;text-transform:uppercase;color:rgba(212,175,55,.3);}
+    .acro-bar strong{color:var(--or);}
+
+    /* ── SECTION BASE ── */
+    section{position:relative;z-index:1;}
+    .eyebrow{font-size:.58rem;font-weight:700;letter-spacing:.45em;text-transform:uppercase;color:var(--or);display:block;text-align:center;margin-bottom:16px;}
+    .sec-title{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:900;line-height:1.18;text-align:center;letter-spacing:.03em;}
+    .sec-rule{width:48px;height:2px;background:var(--or);margin:20px auto 56px;}
+    .sec-sub{font-size:.88rem;font-weight:300;color:rgba(245,245,245,.5);line-height:1.85;text-align:center;max-width:520px;margin:0 auto 72px;}
+
+    /* ── SOCIAL PROOF BAR ── */
+    .proof-bar{position:relative;z-index:1;background:rgba(27,31,59,.4);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);padding:24px 56px;}
+    .proof-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+    .proof-label{font-size:.58rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,245,245,.25);flex-shrink:0;}
+    .proof-items{display:flex;gap:32px;align-items:center;flex-wrap:wrap;}
+    .proof-item{display:flex;align-items:center;gap:10px;font-size:.65rem;font-weight:600;color:rgba(245,245,245,.35);}
+    .proof-item span{font-size:1.2rem;}
+    .proof-divider{font-size:1rem;color:rgba(245,245,245,.08);}
+
+    /* ── DOULEUR ── */
+    #douleur{padding:100px 56px;background:var(--bn);overflow:hidden;position:relative;}
+    #douleur::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(212,175,55,.05),transparent 70%);pointer-events:none;}
+    .douleur-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:1100px;margin:0 auto;}
+    .dc{background:rgba(8,10,20,.55);padding:44px 36px;border-top:2px solid transparent;transition:all var(--tr);position:relative;overflow:hidden;}
+    .dc::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(212,175,55,.04),transparent);opacity:0;transition:opacity var(--tr);}
+    .dc:hover{border-top-color:var(--or);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.4);}
+    .dc:hover::after{opacity:1;}
+    .dc-icon{font-size:2.4rem;margin-bottom:20px;display:block;}
+    .dc-stat{font-size:2.8rem;font-weight:900;color:var(--rg);display:block;line-height:1;margin-bottom:8px;}
+    .dc h3{font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--bc);margin-bottom:12px;}
+    .dc p{font-size:.8rem;font-weight:300;color:rgba(245,245,245,.5);line-height:1.85;}
+
+    /* Compteur pertes */
+    .pertes-counter{max-width:1100px;margin:48px auto 0;background:rgba(255,68,68,.04);border:1px solid rgba(255,68,68,.12);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+    .pertes-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,68,68,.7);}
+    .pertes-value{font-size:2rem;font-weight:900;color:var(--rg);font-variant-numeric:tabular-nums;}
+    .pertes-sub{font-size:.62rem;font-weight:300;color:rgba(245,245,245,.3);}
+
+    /* ── DEMO SECTION ── */
+    #demo{padding:100px 56px;background:var(--np);}
+    .demo-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:80px;align-items:center;}
+    .demo-text .eyebrow{text-align:left;}
+    .demo-text .sec-title{text-align:left;}
+    .demo-text .sec-title em{font-style:normal;color:var(--or);}
+    .demo-text p{font-size:.88rem;font-weight:300;color:rgba(245,245,245,.5);line-height:1.9;margin:16px 0 32px;}
+    .demo-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;}
+    .demo-tab{padding:8px 18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:2px;font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,245,245,.35);cursor:pointer;transition:all var(--tr);}
+    .demo-tab.active{background:rgba(212,175,55,.1);border-color:rgba(212,175,55,.3);color:var(--or);}
+    .demo-features{display:flex;flex-direction:column;gap:12px;}
+    .df{display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(27,31,59,.3);border:1px solid rgba(255,255,255,.05);transition:all var(--tr);}
+    .df:hover{border-color:rgba(212,175,55,.15);background:rgba(212,175,55,.04);}
+    .df-icon{font-size:1.4rem;flex-shrink:0;}
+    .df-text{font-size:.75rem;font-weight:600;color:rgba(245,245,245,.7);}
+    .df-sub{font-size:.62rem;font-weight:300;color:rgba(245,245,245,.35);margin-top:2px;}
+
+    /* ── STEPS ── */
+    #comment{padding:120px 56px;background:var(--bn);}
+    .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:1100px;margin:0 auto;position:relative;}
+    .steps-grid::before{content:'';position:absolute;top:60px;left:16.66%;right:16.66%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.3),rgba(212,175,55,.3),transparent);z-index:0;}
+    .step{padding:52px 40px;text-align:center;position:relative;z-index:1;transition:all var(--tr);}
+    .step:hover{background:rgba(8,10,20,.4);}
+    .sn-wrap{position:relative;display:inline-block;margin-bottom:28px;}
+    .sn{width:72px;height:72px;border:1px solid rgba(212,175,55,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:900;color:var(--or);background:var(--np);transition:all var(--tr);position:relative;z-index:1;}
+    .step:hover .sn{background:var(--or);color:var(--np);box-shadow:0 0 40px rgba(212,175,55,.4);}
+    .sr{position:absolute;inset:-8px;border:1px solid rgba(212,175,55,.1);border-radius:50%;animation:rp 3s ease-in-out infinite;}
+    .step:nth-child(2) .sr{animation-delay:1s;}
+    .step:nth-child(3) .sr{animation-delay:2s;}
+    @keyframes rp{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.12);opacity:0}}
+    .step h3{font-size:.9rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--bc);margin-bottom:14px;}
+    .step p{font-size:.82rem;font-weight:300;color:rgba(245,245,245,.5);line-height:1.9;}
+    .step-tag{display:inline-block;margin-top:18px;font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--or);border:1px solid rgba(212,175,55,.25);padding:5px 14px;border-radius:2px;}
+
+    /* ── COMPTEURS ── */
+    #compteurs{background:var(--np);padding:100px 56px;position:relative;overflow:hidden;}
+    #compteurs::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(212,175,55,.06) 0%,transparent 70%);pointer-events:none;}
+    .cpt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;max-width:1100px;margin:0 auto;}
+    .ci-box{background:rgba(27,31,59,.3);padding:52px 36px;text-align:center;border-bottom:2px solid transparent;transition:all var(--tr);position:relative;overflow:hidden;}
+    .ci-box::before{content:'';position:absolute;bottom:0;left:0;right:0;height:0;background:rgba(212,175,55,.04);transition:height var(--tr);}
+    .ci-box:hover::before{height:100%;}
+    .ci-box:hover{border-bottom-color:var(--or);}
+    .cv{font-size:3.2rem;font-weight:900;color:var(--or);display:block;line-height:1;position:relative;z-index:1;}
+    .cs{font-size:1.5rem;color:var(--orl);}
+    .cl{font-size:.6rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,245,245,.35);margin-top:10px;display:block;position:relative;z-index:1;}
+    .cdesc{font-size:.72rem;font-weight:300;color:rgba(245,245,245,.25);margin-top:5px;display:block;position:relative;z-index:1;}
+
+    /* ── TARIFS ── */
+    #tarifs{padding:120px 56px;background:var(--bn);position:relative;overflow:hidden;}
+    #tarifs::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(212,175,55,.04) 0%,transparent 65%);pointer-events:none;}
+    .tarifs-note{text-align:center;font-size:.75rem;font-weight:300;color:rgba(245,245,245,.4);margin-bottom:40px;font-style:italic;}
+    .tarifs-note strong{color:var(--or);font-weight:700;font-style:normal;}
+    .annual-toggle{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:48px;}
+    .tgl-label{font-size:.68rem;font-weight:600;color:rgba(245,245,245,.4);}
+    .tgl-label.on{color:var(--bc);}
+    .tgl{width:52px;height:28px;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.25);border-radius:14px;cursor:pointer;position:relative;transition:all var(--tr);}
+    .tgl.active{background:rgba(212,175,55,.25);}
+    .tgl-knob{position:absolute;top:3px;left:3px;width:20px;height:20px;background:var(--or);border-radius:50%;transition:transform var(--tr);}
+    .tgl.active .tgl-knob{transform:translateX(24px);}
+    .save-badge{background:rgba(37,211,102,.1);color:var(--vt);border:1px solid rgba(37,211,102,.2);padding:3px 10px;border-radius:2px;font-size:.58rem;font-weight:800;letter-spacing:.15em;display:none;}
+    .tarifs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;max-width:1200px;margin:0 auto 2px;}
+    .tc{background:rgba(8,10,20,.65);padding:44px 32px;border:1px solid rgba(255,255,255,.05);position:relative;overflow:hidden;transition:all var(--tr);}
+    .tc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:transparent;transition:all var(--tr);}
+    .tc:hover{border-color:rgba(212,175,55,.2);transform:translateY(-6px);box-shadow:0 28px 72px rgba(0,0,0,.45);}
+    .tc:hover::before{background:linear-gradient(90deg,var(--or),var(--orl));}
+    .tc.feat{background:rgba(212,175,55,.07);border-color:rgba(212,175,55,.28);transform:translateY(-10px);box-shadow:0 32px 80px rgba(0,0,0,.5);}
+    .tc.feat::before{background:linear-gradient(90deg,var(--or),var(--orl));}
+    .tc-badge{position:absolute;top:20px;right:-1px;background:var(--or);color:var(--np);padding:4px 12px 4px 16px;font-size:.52rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;clip-path:polygon(8px 0%,100% 0%,100% 100%,8px 100%,0% 50%);}
+    .tc-name{font-size:.58rem;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:rgba(245,245,245,.4);margin-bottom:8px;display:block;}
+    .tc-tagline{font-size:.75rem;font-weight:600;color:rgba(245,245,245,.65);margin-bottom:20px;line-height:1.5;}
+    .tc-setup{font-size:.72rem;font-weight:300;color:rgba(245,245,245,.3);margin-bottom:6px;}
+    .tc-setup strong{color:var(--or);font-weight:700;}
+    .tc-price{font-size:2.2rem;font-weight:900;color:var(--bc);line-height:1;margin-bottom:4px;}
+    .tc-price span{font-size:.65rem;font-weight:400;color:rgba(245,245,245,.4);}
+    .tc-equiv{font-size:.6rem;color:rgba(245,245,245,.25);font-style:italic;margin-bottom:24px;}
+    .tc-div{height:1px;background:rgba(255,255,255,.06);margin-bottom:22px;}
+    .tc-feats{list-style:none;margin-bottom:28px;display:flex;flex-direction:column;gap:10px;}
+    .tc-feats li{font-size:.72rem;font-weight:400;color:rgba(245,245,245,.55);display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+    .tc-feats li::before{content:'→';color:var(--or);flex-shrink:0;margin-top:1px;}
+    .tc-feats li.off{opacity:.3;}
+    .tc-feats li.off::before{content:'—';color:rgba(255,255,255,.2);}
+    .tc-cta{display:block;width:100%;padding:13px;text-align:center;font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all var(--tr);border:1px solid rgba(212,175,55,.28);color:var(--or);background:transparent;cursor:pointer;}
+    .tc-cta:hover{background:rgba(212,175,55,.1);}
+    .tc.feat .tc-cta{background:var(--or);color:var(--np);border-color:var(--or);}
+    .tc.feat .tc-cta:hover{background:var(--orl);}
+    .tarif-marche{max-width:1200px;margin:0 auto;background:rgba(27,31,59,.4);border:1px solid rgba(212,175,55,.12);padding:40px 48px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;transition:all var(--tr);}
+    .tarif-marche:hover{border-color:rgba(212,175,55,.28);box-shadow:0 12px 48px rgba(0,0,0,.3);}
+    .tm-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.18);padding:5px 14px;font-size:.55rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--or);margin-bottom:14px;border-radius:2px;}
+    .tm-title{font-size:1.3rem;font-weight:900;margin-bottom:8px;}
+    .tm-desc{font-size:.78rem;font-weight:300;color:rgba(245,245,245,.5);line-height:1.8;max-width:600px;}
+    .tm-right{text-align:right;flex-shrink:0;}
+    .tm-right .tc-price{font-size:1.7rem;}
+    .tm-right small{font-size:.65rem;font-weight:300;color:rgba(245,245,245,.35);}
+    .tarifs-footer{text-align:center;margin-top:40px;font-size:.78rem;font-weight:300;color:rgba(245,245,245,.3);}
+    .tarifs-footer a{color:var(--or);text-decoration:none;font-weight:700;}
+
+    /* ── TEMOIGNAGES ── */
+    #temoignages{padding:100px 56px;background:var(--np);}
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:1100px;margin:0 auto;}
+    .testi{background:rgba(27,31,59,.3);border:1px solid rgba(255,255,255,.05);padding:36px 30px;position:relative;transition:all var(--tr);}
+    .testi:hover{border-color:rgba(212,175,55,.15);transform:translateY(-4px);}
+    .testi-sector{display:inline-block;padding:4px 12px;border-radius:2px;font-size:.55rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px;}
+    .ts-pharma{background:rgba(74,156,255,.1);color:#4A9CFF;}
+    .ts-resto{background:rgba(255,140,66,.1);color:#FF8C42;}
+    .ts-bout{background:rgba(37,211,102,.1);color:var(--vt);}
+    .testi-stars{color:var(--or);font-size:.8rem;margin-bottom:16px;letter-spacing:3px;}
+    .testi-text{font-size:.78rem;font-weight:300;color:rgba(245,245,245,.6);line-height:1.9;font-style:italic;margin-bottom:24px;}
+    .testi-author{display:flex;align-items:center;gap:14px;}
+    .testi-av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--or),var(--bn));display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+    .testi-name{font-size:.72rem;font-weight:700;color:var(--bc);}
+    .testi-role{font-size:.62rem;color:rgba(245,245,245,.3);margin-top:3px;}
+
+    /* ── GARANTIES ── */
+    #garanties{padding:80px 56px;background:rgba(27,31,59,.25);border-top:1px solid rgba(212,175,55,.06);border-bottom:1px solid rgba(212,175,55,.06);}
+    .garanties-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+    .garantie{padding:36px 28px;text-align:center;border-right:1px solid rgba(255,255,255,.04);transition:all var(--tr);}
+    .garantie:last-child{border-right:none;}
+    .garantie:hover{background:rgba(212,175,55,.03);}
+    .g-icon{font-size:2.2rem;margin-bottom:16px;display:block;}
+    .g-title{font-size:.75rem;font-weight:800;color:var(--bc);margin-bottom:8px;}
+    .g-desc{font-size:.7rem;font-weight:300;color:rgba(245,245,245,.4);line-height:1.8;}
+
+    /* ── TECH ── */
+    #tech{padding:100px 56px;background:var(--np);}
+    .tech-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;max-width:1100px;margin:0 auto;}
+    .tb{background:rgba(27,31,59,.3);padding:36px 20px;text-align:center;border-bottom:2px solid transparent;transition:all var(--tr);position:relative;}
+    .tb:hover{border-bottom-color:var(--or);transform:translateY(-4px);background:rgba(27,31,59,.6);}
+    .tb-off::after{content:'OFFICIEL';position:absolute;top:8px;right:8px;font-size:.38rem;font-weight:900;letter-spacing:.1em;background:rgba(212,175,55,.12);color:var(--or);padding:3px 6px;}
+    .tb-icon{font-size:2rem;display:block;margin-bottom:10px;}
+    .tb-name{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--bc);display:block;margin-bottom:4px;}
+    .tb-type{font-size:.55rem;font-weight:300;color:rgba(245,245,245,.3);}
+
+    /* ── FAQ ── */
+    #faq{padding:120px 56px;background:var(--bn);}
+    .faq-wrap{max-width:800px;margin:0 auto;}
+    .fi{border-bottom:1px solid rgba(212,175,55,.08);}
+    .fq{width:100%;background:none;border:none;padding:26px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:.9rem;font-weight:700;color:var(--bc);text-align:left;transition:color var(--tr);gap:16px;}
+    .fq:hover{color:var(--or);}
+    .fi-icon{width:32px;height:32px;flex-shrink:0;border:1px solid rgba(212,175,55,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--or);font-size:1rem;transition:all var(--tr);}
+    .fi.open .fi-icon{background:var(--or);color:var(--np);transform:rotate(45deg);}
+    .fa{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1);}
+    .fa p{font-size:.85rem;font-weight:300;color:rgba(245,245,245,.55);line-height:1.95;padding-bottom:28px;padding-right:48px;}
+    .fa strong{color:var(--or);font-weight:700;}
+    .fa a{color:var(--or);}
+
+    /* ── MEGA CTA ── */
+    #cta-final{padding:120px 56px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(180deg,var(--bn),var(--np));}
+    #cta-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(212,175,55,.07) 0%,transparent 65%);pointer-events:none;}
+    .cta-inner{position:relative;z-index:1;max-width:760px;margin:0 auto;}
+    .urgency-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,68,68,.07);border:1px solid rgba(255,68,68,.18);padding:8px 20px;border-radius:2px;margin-bottom:28px;}
+    .urgency-badge span{font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rg);}
+    .cta-title{font-size:clamp(2.2rem,5vw,4rem);font-weight:900;line-height:1.12;margin-bottom:20px;}
+    .cta-title em{font-style:normal;color:var(--or);}
+    .cta-sub{font-size:.9rem;font-weight:300;color:rgba(245,245,245,.5);line-height:1.9;margin-bottom:44px;}
+    .cta-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .live-count{font-size:.72rem;color:rgba(245,245,245,.3);margin-top:20px;}
+    .live-count strong{color:var(--or);}
+
+    /* ── CONTACT ── */
+    #contact{padding:120px 56px;background:var(--bn);position:relative;overflow:hidden;}
+    #contact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(212,175,55,.07) 0%,transparent 55%);pointer-events:none;}
+    .contact-wrap{max-width:1100px;margin:0 auto;}
+    .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start;}
+    .contact-left h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;line-height:1.15;margin-bottom:20px;}
+    .contact-left h2 em{font-style:normal;color:var(--or);}
+    .contact-left p{font-size:.88rem;font-weight:300;color:rgba(245,245,245,.55);line-height:1.9;margin-bottom:40px;}
+    .contact-infos{display:flex;flex-direction:column;gap:2px;}
+    .ci-row{display:flex;align-items:center;gap:16px;padding:18px 22px;background:rgba(8,10,20,.4);border-left:2px solid transparent;transition:all var(--tr);}
+    .ci-row:hover{border-left-color:var(--or);background:rgba(8,10,20,.7);}
+    .ci-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+    .ci-label{font-size:.55rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--or);margin-bottom:3px;}
+    .ci-value{font-size:.84rem;font-weight:400;color:var(--bc);}
+    .contact-form{background:rgba(8,10,20,.6);padding:52px 44px;border:1px solid rgba(212,175,55,.1);backdrop-filter:blur(12px);}
+    .cf-title{font-size:1.05rem;font-weight:900;margin-bottom:8px;}
+    .cf-sub{font-size:.75rem;font-weight:300;color:rgba(245,245,245,.4);margin-bottom:32px;line-height:1.6;}
+    .fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .fg{margin-bottom:16px;}
+    .fg label{display:block;font-size:.55rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,245,245,.28);margin-bottom:8px;}
+    .fg input,.fg textarea,.fg select{width:100%;background:rgba(27,31,59,.5);border:1px solid rgba(212,175,55,.1);border-radius:2px;padding:13px 16px;font-family:'Montserrat',sans-serif;font-size:.84rem;font-weight:300;color:var(--bc);outline:none;transition:all var(--tr);}
+    .fg input::placeholder,.fg textarea::placeholder{color:rgba(245,245,245,.18);}
+    .fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--or);background:rgba(27,31,59,.8);}
+    .fg select option{background:var(--bn);}
+    .fg textarea{min-height:100px;resize:vertical;}
+    .sbtn{width:100%;background:var(--or);color:var(--np);padding:18px;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:900;letter-spacing:.25em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:all var(--tr);margin-top:6px;position:relative;overflow:hidden;}
+    .sbtn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.15) 50%,transparent 70%);transform:translateX(-100%);transition:transform .6s ease;}
+    .sbtn:hover{background:var(--orl);box-shadow:0 12px 48px rgba(212,175,55,.4);transform:translateY(-2px);}
+    .sbtn:hover::before{transform:translateX(100%);}
+    .wa-btn-form{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:12px;padding:14px;background:transparent;border:1px solid rgba(37,211,102,.22);border-radius:2px;color:rgba(37,211,102,.75);font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;transition:all var(--tr);}
+    .wa-btn-form:hover{border-color:var(--vt);color:var(--vt);background:rgba(37,211,102,.05);}
+    .f-legal{font-size:.56rem;font-weight:300;color:rgba(245,245,245,.18);text-align:center;margin-top:12px;line-height:1.6;}
+    .f-legal a{color:rgba(212,175,55,.35);text-decoration:none;}
+
+    /* ── FOOTER ── */
+    footer{background:var(--np);border-top:1px solid rgba(212,175,55,.1);padding:72px 56px 40px;}
+    .footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:52px;max-width:1200px;margin:0 auto 56px;}
+    .fb-brand .logo{font-size:1.5rem;font-weight:900;letter-spacing:.3em;color:var(--bc);display:block;margin-bottom:6px;}
+    .fb-brand .logo .acc{color:var(--or);}
+    .fb-brand .logo sup{font-size:.42rem;color:var(--or);vertical-align:super;}
+    .fb-brand .tagline{font-size:.6rem;font-weight:300;font-style:italic;color:rgba(245,245,245,.25);display:block;margin-bottom:20px;}
+    .fb-brand p{font-size:.76rem;font-weight:300;color:rgba(245,245,245,.33);line-height:1.85;}
+    .fb-brand .addr{font-size:.65rem;color:rgba(245,245,245,.22);margin-top:16px;line-height:1.7;}
+    .fc h4{font-size:.56rem;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--or);margin-bottom:22px;}
+    .fc ul{list-style:none;}
+    .fc li{margin-bottom:11px;}
+    .fc a{font-size:.78rem;font-weight:300;color:rgba(245,245,245,.42);text-decoration:none;transition:color var(--tr);}
+    .fc a:hover{color:var(--or);}
+    .footer-bottom{max-width:1200px;margin:0 auto;padding-top:28px;border-top:1px solid rgba(255,255,255,.04);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+    .footer-bottom p{font-size:.62rem;color:rgba(245,245,245,.22);}
+    .footer-links{display:flex;gap:24px;}
+    .footer-links a{font-size:.62rem;color:rgba(212,175,55,.38);text-decoration:none;transition:color var(--tr);}
+    .footer-links a:hover{color:var(--or);}
+
+    /* ── WA FLOAT ── */
+    .wa-float{position:fixed;bottom:32px;right:32px;z-index:9000;width:60px;height:60px;border-radius:50%;background:var(--vt);display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 8px 32px rgba(37,211,102,.4);animation:waPulse 2.5s ease-in-out infinite;}
+    .wa-float svg{width:28px;height:28px;fill:white;}
+    .wa-float:hover{transform:scale(1.1);animation:none;}
+    .wa-tooltip{position:absolute;right:72px;white-space:nowrap;background:var(--np);color:var(--bc);font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;padding:8px 16px;border-radius:2px;border:1px solid rgba(212,175,55,.2);opacity:0;pointer-events:none;transition:opacity var(--tr);}
+    .wa-float:hover .wa-tooltip{opacity:1;}
+    @keyframes waPulse{0%,100%{box-shadow:0 8px 32px rgba(37,211,102,.4)}50%{box-shadow:0 8px 48px rgba(37,211,102,.65),0 0 0 12px rgba(37,211,102,.07)}}
+    .back-top{position:fixed;bottom:32px;left:32px;z-index:9000;width:44px;height:44px;border-radius:2px;background:rgba(27,31,59,.9);border:1px solid rgba(212,175,55,.2);display:flex;align-items:center;justify-content:center;color:var(--or);font-size:1rem;text-decoration:none;opacity:0;pointer-events:none;transition:all var(--tr);backdrop-filter:blur(8px);}
+    .back-top.vis{opacity:1;pointer-events:all;}
+    .back-top:hover{background:var(--or);color:var(--np);}
+
+    /* ── COOKIES ── */
+    .cookie-bar{position:fixed;bottom:0;left:0;right:0;z-index:8000;background:rgba(8,10,20,.97);backdrop-filter:blur(16px);border-top:1px solid rgba(212,175,55,.14);padding:20px 56px;display:flex;align-items:center;justify-content:space-between;gap:24px;transition:transform .5s ease;}
+    .cookie-bar.hidden{transform:translateY(100%);}
+    .cookie-txt{font-size:.72rem;font-weight:300;color:rgba(245,245,245,.55);line-height:1.6;}
+    .cookie-txt a{color:var(--or);text-decoration:none;}
+    .cookie-btns{display:flex;gap:10px;flex-shrink:0;}
+    .ck-accept{background:var(--or);color:var(--np);padding:10px 24px;font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;}
+    .ck-refuse{background:transparent;color:rgba(245,245,245,.35);padding:10px 20px;font-family:'Montserrat',sans-serif;font-size:.58rem;border:1px solid rgba(255,255,255,.1);border-radius:2px;cursor:pointer;}
+
+    /* ── REVEAL ── */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease;}
+    .reveal.v{opacity:1;transform:translateY(0);}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1100px){
+      .tarifs-grid{grid-template-columns:repeat(2,1fr);}
+      .hero-inner{grid-template-columns:1fr;}
+      .hero-phone{display:none;}
+      .demo-inner{grid-template-columns:1fr;}
+      .garanties-inner{grid-template-columns:repeat(2,1fr);}
+    }
+    @media(max-width:900px){
+      nav{padding:0 24px;}.nav-links{display:none;}.burger{display:flex;}
+      #hero{padding:40px 24px 60px;}
+      .urgence-band{font-size:.5rem;padding:8px 16px;}
+      #douleur,#comment,#compteurs,#tarifs,#tech,#faq,#contact,#temoignages,#garanties,#demo,#cta-final{padding:72px 24px;}
+      .douleur-grid,.steps-grid,.testi-grid,.cpt-grid,.tech-grid{grid-template-columns:1fr;}
+      .steps-grid::before{display:none;}
+      .contact-grid{grid-template-columns:1fr;gap:48px;}
+      .contact-form{padding:32px 24px;}
+      .fg2{grid-template-columns:1fr;}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:36px;}
+      footer{padding:56px 24px 32px;}
+      .footer-bottom{flex-direction:column;text-align:center;}
+      .tarif-marche{grid-template-columns:1fr;gap:24px;}
+      .tm-right{text-align:left;}
+      .cookie-bar{padding:16px 24px;flex-direction:column;align-items:flex-start;}
+      .hero-stats{flex-wrap:wrap;}
+      .hero-actions{flex-direction:column;align-items:flex-start;}
+      .proof-inner{flex-direction:column;align-items:flex-start;}
+    }
+    @media(max-width:480px){
+      .tarifs-grid{grid-template-columns:1fr;}
+      .tc.feat{transform:none;}
+      .tech-grid{grid-template-columns:repeat(3,1fr);}
+      .footer-grid{grid-template-columns:1fr;}
+      .garanties-inner{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="cd" id="cDot"></div>
+<div class="cr" id="cRing"></div>
+<div class="spb" id="spb"></div>
+<canvas id="pc"></canvas>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/22391421413" target="_blank" class="wa-float" aria-label="Contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  <span class="wa-tooltip">Écrire sur WhatsApp</span>
+</a>
+<a href="#hero" class="back-top" id="backTop" aria-label="Haut">↑</a>
+
+<!-- COOKIES -->
+<div class="cookie-bar" id="cookieBar">
+  <p class="cookie-txt">🍪 Ce site utilise uniquement des cookies essentiels. Aucun tracker publicitaire. <a href="privacy-policy.html">En savoir plus</a></p>
+  <div class="cookie-btns">
+    <button class="ck-accept" onclick="acceptCookies()">Accepter</button>
+    <button class="ck-refuse" onclick="refuseCookies()">Refuser</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">TH<span class="acc">É</span>RA<sup>CORP</sup></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+    <li><a href="a-propos.html">À propos</a></li>
+    <li><a href="devis.html">Devis</a></li>
+    <li><a href="contact.html" class="nav-cta">Démarrer</a></li>
+  </ul>
+  <div class="burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- URGENCE BAND -->
+<div class="urgence-band">
+  <span class="dot"></span>Chaque heure sans chatbot = clients perdus
+  <span class="dot"></span>Déploiement en 48h
+  <span class="dot"></span>Mali — theracorp.net
+  <span class="dot"></span>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-line-left"></div>
+  <div class="hero-inner">
+
+    <div class="hero-text">
+      <div class="hero-badge"><span class="live-dot"></span><span>Intelligence Artificielle · Mali 🇲🇱</span></div>
+      <h1 class="hero-title">
+        Votre business perd
+        <span class="gold">des clients.</span>
+        <span class="dim">En ce moment même.</span>
+      </h1>
+      <p class="hero-tw">
+        Chaque message sans réponse sur WhatsApp, c'est
+        <span class="typed" id="typedText"></span><span class="cb"></span>
+      </p>
+      <div class="hero-actions">
+        <a href="devis.html" class="btn-or">Automatiser — Gratuit 7 jours</a>
+        <a href="#comment" class="btn-ghost">Comment ça marche ?</a>
+      </div>
+      <div class="hero-trust">
+        <div class="ht-item">48h de déploiement</div>
+        <div class="ht-sep"></div>
+        <div class="ht-item">Orange Money accepté</div>
+        <div class="ht-sep"></div>
+        <div class="ht-item">Répond en Bambara</div>
+      </div>
+      <div class="hero-stats">
+        <div class="hs"><span class="hs-n" data-target="48">0</span><span class="hs-l">Heures</span></div>
+        <div class="hs"><span class="hs-n" data-target="24">0</span><span class="hs-l">Disponibilité</span></div>
+        <div class="hs"><span class="hs-n" data-target="3">0</span><span class="hs-l">Secteurs</span></div>
+        <div class="hs"><span class="hs-n" data-target="100">0</span><span class="hs-l">% Mali</span></div>
+      </div>
+    </div>
+
+    <!-- Phone Demo -->
+    <div class="hero-phone">
+      <div class="phone-wrap">
+        <div class="phone-glow"></div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="wa-header">
+            <div class="wa-av">💊</div>
+            <div>
+              <div class="wa-info-name">Pharmacie Djourou</div>
+              <div class="wa-info-status">● Bot actif 24h/24</div>
+            </div>
+          </div>
+          <div class="wa-body" id="heroChatBody"></div>
+        </div>
+        <div class="phone-badge">⚡ Live demo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACRONYME -->
+<div class="acro-bar">
+  <strong>T</strong>echnology · <strong>H</strong>eritage · <strong>É</strong>ngineering · <strong>R</strong>esilience · <strong>A</strong>frica — theracorp.net · Mali 🇲🇱
+</div>
+
+<!-- SOCIAL PROOF -->
+<div class="proof-bar">
+  <div class="proof-inner">
+    <span class="proof-label">Secteurs servis au Mali</span>
+    <div class="proof-items">
+      <div class="proof-item"><span>💊</span>Pharmacies au Mali</div>
+      <span class="proof-divider">|</span>
+      <div class="proof-item"><span>🍽️</span>Restaurants & Maquis</div>
+      <span class="proof-divider">|</span>
+      <div class="proof-item"><span>🛍️</span>Boutiques & Commerce</div>
+      <span class="proof-divider">|</span>
+      <div class="proof-item"><span>🏪</span>Marchés collectifs</div>
+    </div>
+    <div class="proof-item"><span>🟠</span>Orange Money · <span style="margin-left:4px">🌊</span>Wave</div>
+  </div>
+</div>
+
+<!-- ═══ DOULEUR ═══ -->
+<section id="douleur">
+  <span class="eyebrow reveal">La réalité du marché malien</span>
+  <h2 class="sec-title reveal">Pourquoi <span style="color:var(--rg)">ne pas répondre</span> vous coûte cher ?</h2>
+  <div class="sec-rule"></div>
+  <p class="sec-sub reveal">En Afrique de l'Ouest, WhatsApp est le premier canal de vente. Chaque message sans réponse rapide est une opportunité perdue.</p>
+  <div class="douleur-grid">
+    <div class="dc reveal d1">
+      <span class="dc-icon">💊</span>
+      <span class="dc-stat" style="font-size:1.8rem;color:var(--or)">Pharmacies</span>
+      <h3>Disponibilité 24h/24</h3>
+      <p>Vos clients cherchent des médicaments le soir, la nuit, le week-end. Un bot répond immédiatement à leurs questions de disponibilité et de prix — pendant que vous dormez.</p>
+      <a href="services.html" style="display:inline-block;margin-top:20px;font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--or);text-decoration:none;">Voir la solution →</a>
+    </div>
+    <div class="dc reveal d2">
+      <span class="dc-icon">🍽️</span>
+      <span class="dc-stat" style="font-size:1.8rem;color:var(--or)">Restaurants</span>
+      <h3>Réservations automatiques</h3>
+      <p>Les commandes arrivent souvent en dehors des heures d'ouverture. Un chatbot prend les réservations, envoie le menu du jour, gère les commandes à emporter — sans vous déranger.</p>
+      <a href="services.html" style="display:inline-block;margin-top:20px;font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--or);text-decoration:none;">Voir la solution →</a>
+    </div>
+    <div class="dc reveal d3">
+      <span class="dc-icon">🛒</span>
+      <span class="dc-stat" style="font-size:1.8rem;color:var(--or)">Boutiques</span>
+      <h3>Catalogue toujours actif</h3>
+      <p>Vos clients demandent prix, disponibilité, livraison à toute heure. Un bot répond instantanément, présente votre catalogue avec photos et accepte Orange Money sans vous.</p>
+      <a href="services.html" style="display:inline-block;margin-top:20px;font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--or);text-decoration:none;">Voir la solution →</a>
+    </div>
+  </div>
+  <div class="pertes-counter reveal">
+    <div>
+      <div class="pertes-label">💡 Le saviez-vous ?</div>
+      <div class="pertes-sub">En Afrique de l'Ouest, WhatsApp est utilisé pour 60%+ des achats locaux. Un message sans réponse en moins de 10 minutes réduit drastiquement les chances de vente.</div>
+    </div>
+    <a href="services.html" class="btn-or" style="white-space:nowrap;font-size:.6rem;padding:14px 28px;">Découvrir les solutions →</a>
+  </div>
+</section>
+
+<!-- ═══ COMMENT ÇA MARCHE ═══ -->
+<section id="comment">
+  <span class="eyebrow reveal">La solution THÉRA Corp</span>
+  <h2 class="sec-title reveal">Opérationnel en <span style="color:var(--or)">48 heures</span></h2>
+  <div class="sec-rule"></div>
+  <p class="sec-sub reveal">Trois étapes. Zéro technicité. Votre bot tourne pendant que vous gérez votre business.</p>
+  <div class="steps-grid">
+    <div class="step reveal d1">
+      <div class="sn-wrap"><div class="sn">01</div><div class="sr"></div></div>
+      <h3>Vous nous contactez</h3>
+      <p>Un appel de 30 minutes sur WhatsApp. Vous décrivez votre business, vos produits, vos horaires. On s'occupe du reste.</p>
+      <span class="step-tag">Jour 0 · 30 min</span>
+    </div>
+    <div class="step reveal d2">
+      <div class="sn-wrap"><div class="sn">02</div><div class="sr"></div></div>
+      <h3>On configure votre bot</h3>
+      <p>Catalogue, prix, Orange Money, Bambara si vous voulez. 100% personnalisé. Vous n'avez rien à faire techniquement.</p>
+      <span class="step-tag">Jour 1 · 0 effort</span>
+    </div>
+    <div class="step reveal d3">
+      <div class="sn-wrap"><div class="sn">03</div><div class="sr"></div></div>
+      <h3>Votre bot est en ligne</h3>
+      <p>WhatsApp répond à vos clients 24h/24. Commandes, réservations, paiements — tout géré sans vous déranger.</p>
+      <span class="step-tag">Jour 2 · ∞</span>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:56px;" class="reveal">
+    <a href="services.html" class="btn-or">Voir tous nos services en détail →</a>
+    <p style="margin-top:16px;font-size:.7rem;font-weight:300;color:rgba(245,245,245,.35);">Pharmacie · Restaurant · Boutique · Pack Marché</p>
+  </div>
+</section>
+<section id="compteurs">
+  <span class="eyebrow reveal" style="margin-bottom:56px;display:block;">En chiffres</span>
+  <div class="cpt-grid">
+    <div class="ci-box reveal d1">
+      <span class="cv"><span class="count-up" data-target="24">0</span><span class="cs">/7</span></span>
+      <span class="cl">Disponibilité</span><span class="cdesc">Votre bot ne dort jamais</span>
+    </div>
+    <div class="ci-box reveal d2">
+      <span class="cv"><span class="count-up" data-target="5">0</span><span class="cs">s</span></span>
+      <span class="cl">Temps de réponse</span><span class="cdesc">Vs 4h en moyenne humaine</span>
+    </div>
+    <div class="ci-box reveal d3">
+      <span class="cv"><span class="count-up" data-target="48">0</span><span class="cs">h</span></span>
+      <span class="cl">Déploiement</span><span class="cdesc">Du contact à la mise en ligne</span>
+    </div>
+    <div class="ci-box reveal d4">
+      <span class="cv"><span class="count-up" data-target="99">0</span><span class="cs">%</span></span>
+      <span class="cl">Disponibilité serveur</span><span class="cdesc">Hetzner, Allemagne</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TARIFS ═══ -->
+<section id="tarifs">
+  <span class="eyebrow reveal">Tarification Mali 2025</span>
+  <h2 class="sec-title reveal">Des prix pensés <span style="color:var(--or)">pour vous</span></h2>
+  <div class="sec-rule"></div>
+  <p class="tarifs-note reveal">Paiement en <strong>Orange Money · Wave · Virement</strong> · <strong>7 jours gratuits</strong> sur toutes les formules · Résiliable à 30 jours</p>
+  <div class="annual-toggle reveal">
+    <span class="tgl-label on" id="tl-m">Mensuel</span>
+    <div class="tgl" id="tglSwitch" onclick="toggleAnnual()"><div class="tgl-knob"></div></div>
+    <span class="tgl-label" id="tl-a">Annuel</span>
+    <span class="save-badge" id="saveBadge">2 mois offerts</span>
+  </div>
+  <div class="tarifs-grid">
+    <!-- ESSENTIEL -->
+    <div class="tc reveal d1">
+      <span class="tc-name">Essentiel</span>
+      <div class="tc-tagline">Pour démarrer sans risque</div>
+      <div class="tc-setup">Setup unique : <strong>55 000 FCFA</strong></div>
+      <div class="tc-price" id="p-ess">15 000 <span>FCFA/mois</span></div>
+      <div class="tc-equiv">≈ 500 FCFA/jour</div>
+      <div class="tc-div"></div>
+      <ul class="tc-feats">
+        <li>Bot FAQ automatique</li>
+        <li>500 conversations/mois</li>
+        <li>Catalogue 20 produits</li>
+        <li>Réponses Français</li>
+        <li>Support par email</li>
+        <li class="off">Bambara</li>
+        <li class="off">Orange Money intégré</li>
+      </ul>
+      <a href="devis.html?plan=essentiel" class="tc-cta">Démarrer →</a>
+    </div>
+    <!-- PRO -->
+    <div class="tc feat reveal d2">
+      <div class="tc-badge">Le + populaire</div>
+      <span class="tc-name">Pro</span>
+      <div class="tc-tagline">Pour les commerces établis</div>
+      <div class="tc-setup">Setup unique : <strong>120 000 FCFA</strong></div>
+      <div class="tc-price" id="p-pro">32 000 <span>FCFA/mois</span></div>
+      <div class="tc-equiv">≈ 1 066 FCFA/jour</div>
+      <div class="tc-div"></div>
+      <ul class="tc-feats">
+        <li>Bot IA complet</li>
+        <li>10 000 conversations/mois</li>
+        <li>Catalogue illimité + photos</li>
+        <li><strong style="color:var(--or)">Bambara + Français</strong></li>
+        <li>Orange Money & Wave</li>
+        <li>Dashboard client web</li>
+        <li>Support WhatsApp 7j/7</li>
+      </ul>
+      <a href="devis.html?plan=pro" class="tc-cta">Choisir Pro →</a>
+    </div>
+    <!-- BUSINESS -->
+    <div class="tc reveal d3">
+      <span class="tc-name">Business</span>
+      <div class="tc-tagline">Pour les entreprises en croissance</div>
+      <div class="tc-setup">Setup unique : <strong>200 000 FCFA</strong></div>
+      <div class="tc-price" id="p-biz">55 000 <span>FCFA/mois</span></div>
+      <div class="tc-equiv">≈ 1 833 FCFA/jour</div>
+      <div class="tc-div"></div>
+      <ul class="tc-feats">
+        <li>Tout Pro inclus</li>
+        <li>Conversations illimitées</li>
+        <li>Bambara avancé + dialectes</li>
+        <li>Multi-agents IA (5 bots)</li>
+        <li>Négociation de prix IA</li>
+        <li>Analytics + rapports auto</li>
+        <li>Support prioritaire 24h/24</li>
+      </ul>
+      <a href="devis.html?plan=business" class="tc-cta">Choisir Business →</a>
+    </div>
+    <!-- PACK MARCHE -->
+    <div class="tc reveal d4" style="background:rgba(212,175,55,.03);border-color:rgba(212,175,55,.12);">
+      <span class="tc-name" style="color:var(--or)">Pack Marché</span>
+      <div class="tc-tagline">Marchés & galeries</div>
+      <div class="tc-setup">Setup collectif : <strong>250 000 FCFA</strong></div>
+      <div class="tc-price" id="p-marc">7 000 <span>FCFA/bout./mois</span></div>
+      <div class="tc-equiv">≈ 233 FCFA/jour/boutique</div>
+      <div class="tc-div"></div>
+      <ul class="tc-feats">
+        <li>Bot Business par boutique</li>
+        <li>Dashboard centralisé</li>
+        <li>Bambara natif</li>
+        <li>Analytics par boutique</li>
+        <li>Rapport gestionnaire hebdo</li>
+        <li>Formation collective incluse</li>
+        <li>Min. 5 boutiques</li>
+      </ul>
+      <a href="devis.html?plan=marche" class="tc-cta">Demander un devis →</a>
+    </div>
+  </div>
+  <div class="tarif-marche reveal">
+    <div>
+      <div class="tm-badge">🏪 Exemple concret</div>
+      <div class="tm-title">Marché de 15 boutiques</div>
+      <p class="tm-desc">250 000 FCFA setup + 7 000 × 15 = 105 000 FCFA/mois. Si chaque boutique prenait le Pro seul : 1 800 000 FCFA setup + 480 000 FCFA/mois. <strong style="color:var(--or)">Économie : 1 550 000 FCFA au setup et 375 000 FCFA chaque mois.</strong></p>
+    </div>
+    <div class="tm-right">
+      <div style="font-size:.7rem;color:rgba(245,245,245,.3);margin-bottom:4px;">Au lieu de 480 000 FCFA/mois</div>
+      <div class="tc-price" style="font-size:1.7rem;">105 000 <span style="font-size:.65rem;color:rgba(245,245,245,.4)">FCFA/mois</span></div>
+      <div style="font-size:.62rem;color:rgba(245,245,245,.28);margin-bottom:16px;">pour 15 boutiques</div>
+      <a href="devis.html?plan=marche" class="tc-cta" style="display:inline-block;padding:12px 24px;white-space:nowrap;">Calculer mon marché →</a>
+    </div>
+  </div>
+  <p class="tarifs-footer reveal">Formule sur mesure ? <a href="devis.html">Obtenez un devis personnalisé en 2 minutes →</a></p>
+</section>
+
+<!-- ═══ POURQUOI THÉRA CORP ═══ -->
+<section id="temoignages">
+  <span class="eyebrow reveal">Pourquoi nous choisir</span>
+  <h2 class="sec-title reveal">Ce qui nous <span style="color:var(--or)">distingue</span></h2>
+  <div class="sec-rule"></div>
+  <div class="testi-grid">
+    <div class="testi reveal d1">
+      <div class="testi-sector ts-pharma">🇲🇱 Mali First</div>
+      <div class="g-icon" style="font-size:2rem;margin-bottom:12px;">🗣️</div>
+      <p class="testi-text" style="font-style:normal;">"La seule agence au Mali qui configure des chatbots en <strong style="color:var(--or)">Bambara authentique</strong>. Pas une traduction approximative — une compréhension réelle des expressions locales et des mélanges Bambara-Français de Bamako."</p>
+      <div class="testi-author">
+        <div class="testi-av">🌍</div>
+        <div><div class="testi-name">Notre différence #1</div><div class="testi-role">Aucune agence au Mali ne propose cela</div></div>
+      </div>
+    </div>
+    <div class="testi reveal d2">
+      <div class="testi-sector ts-resto">📱 Orange Money</div>
+      <div class="g-icon" style="font-size:2rem;margin-bottom:12px;">💳</div>
+      <p class="testi-text" style="font-style:normal;">"Paiement <strong style="color:var(--or)">Orange Money et Wave intégré</strong> directement dans la conversation WhatsApp. Vos clients paient sans quitter l'app. Confirmation instantanée des deux côtés."</p>
+      <div class="testi-author">
+        <div class="testi-av">🟠</div>
+        <div><div class="testi-name">Notre différence #2</div><div class="testi-role">Paiement mobile pensé pour le Mali</div></div>
+      </div>
+    </div>
+    <div class="testi reveal d3">
+      <div class="testi-sector ts-bout">⚡ 48h</div>
+      <div class="g-icon" style="font-size:2rem;margin-bottom:12px;">🚀</div>
+      <p class="testi-text" style="font-style:normal;">"<strong style="color:var(--or)">48 heures</strong> du premier contact à votre bot en ligne. Un appel de 30 minutes avec vous, on configure tout, on teste ensemble, et c'est en ligne. Zéro technicité requise de votre côté."</p>
+      <div class="testi-author">
+        <div class="testi-av">⚡</div>
+        <div><div class="testi-name">Notre différence #3</div><div class="testi-role">Le déploiement le plus rapide du marché</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GARANTIES ═══ -->
+<section id="garanties">
+  <div class="garanties-inner">
+    <div class="garantie reveal d1">
+      <span class="g-icon">🛡️</span>
+      <div class="g-title">7 jours gratuits</div>
+      <div class="g-desc">Testez votre bot 7 jours complets. Aucune carte bancaire requise. Vous gardez si vous êtes satisfait.</div>
+    </div>
+    <div class="garantie reveal d2">
+      <span class="g-icon">⚡</span>
+      <div class="g-title">48h de déploiement</div>
+      <div class="g-desc">Du premier contact à votre bot en ligne. Garanti. Pas de semaines d'attente, pas de technicité requise.</div>
+    </div>
+    <div class="garantie reveal d3">
+      <span class="g-icon">🔓</span>
+      <div class="g-title">Sans engagement</div>
+      <div class="g-desc">Résiliation à 30 jours de préavis. Aucune pénalité. Vos données vous appartiennent et peuvent être exportées.</div>
+    </div>
+    <div class="garantie reveal d4">
+      <span class="g-icon">🇲🇱</span>
+      <div class="g-title">100% Mali</div>
+      <div class="g-desc">Équipe basée à Bamako, service dans tout le Mali. Support en Bambara et Français, sur WhatsApp. Paiement Orange Money & Wave.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TECHNOLOGIES ═══ -->
+<section id="tech">
+  <span class="eyebrow reveal">Stack technologique</span>
+  <h2 class="sec-title reveal">Technologies <span style="color:var(--or)">de classe mondiale</span></h2>
+  <div class="sec-rule"></div>
+  <div class="tech-grid reveal">
+    <div class="tb tb-off"><span class="tb-icon">💬</span><span class="tb-name">WhatsApp</span><span class="tb-type">API Business Meta</span></div>
+    <div class="tb"><span class="tb-icon">🤖</span><span class="tb-name">Claude AI</span><span class="tb-type">Anthropic</span></div>
+    <div class="tb"><span class="tb-icon">🎙️</span><span class="tb-name">Whisper</span><span class="tb-type">OpenAI Vocal</span></div>
+    <div class="tb"><span class="tb-icon">🟠</span><span class="tb-name">Orange Money</span><span class="tb-type">CinetPay</span></div>
+    <div class="tb"><span class="tb-icon">🌊</span><span class="tb-name">Wave</span><span class="tb-type">Paiement mobile</span></div>
+    <div class="tb"><span class="tb-icon">🛡️</span><span class="tb-name">Hetzner</span><span class="tb-type">Serveurs Allemagne</span></div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq">
+  <span class="eyebrow reveal">Questions fréquentes</span>
+  <h2 class="sec-title reveal">Ce que vous voulez <span style="color:var(--or)">savoir</span></h2>
+  <div class="sec-rule"></div>
+  <div class="faq-wrap reveal">
+    <div class="fi"><button class="fq" onclick="toggleFaq(this)" aria-expanded="false">Le chatbot parle vraiment Bambara ?<span class="fi-icon">+</span></button><div class="fa"><p>Oui. C'est notre fonctionnalité exclusive. Notre système comprend et répond en Bambara, gère les mélanges Bambara/Français courants à Bamako. <strong>Aucune autre agence au Mali ne propose cela.</strong> Disponible à partir de la formule Pro.</p></div></div>
+    <div class="fi"><button class="fq" onclick="toggleFaq(this)" aria-expanded="false">Combien de temps pour déployer ?<span class="fi-icon">+</span></button><div class="fa"><p><strong>48 heures maximum</strong> après signature. Un appel de 30 minutes suffit. Vous n'avez rien à faire techniquement — nous configurons tout.</p></div></div>
+    <div class="fi"><button class="fq" onclick="toggleFaq(this)" aria-expanded="false">Et si l'internet coupe à Bamako ?<span class="fi-icon">+</span></button><div class="fa"><p>Nos serveurs sont en Europe (Hetzner, Allemagne) avec 99,9% de disponibilité. En formule Business, le système bascule sur <strong>SMS via Africa's Talking</strong> si la connexion data est coupée. Votre business continue.</p></div></div>
+    <div class="fi"><button class="fq" onclick="toggleFaq(this)" aria-expanded="false">Comment fonctionne le paiement Orange Money dans le chat ?<span class="fi-icon">+</span></button><div class="fa"><p>Le chatbot génère un lien de paiement Orange Money ou Wave <strong>directement dans la conversation WhatsApp</strong>. Le client paie sans quitter l'application. Confirmation automatique et instantanée dans les 2 secondes.</p></div></div>
+    <div class="fi"><button class="fq" onclick="toggleFaq(this)" aria-expanded="false">Puis-je tester avant de m'engager ?<span class="fi-icon">+</span></button><div class="fa"><p>Absolument. <strong>7 jours de démonstration gratuite</strong> sur votre propre numéro WhatsApp. Sans engagement, sans carte bancaire. <a href="devis.html">Demander ma démo →</a></p></div></div>
+    <div class="fi"><button class="fq" onclick="toggleFaq(this)" aria-expanded="false">Comment payer l'abonnement THÉRA Corp ?<span class="fi-icon">+</span></button><div class="fa"><p>Nous acceptons <strong>Orange Money, Wave, et virement bancaire</strong>. Paiement mensuel ou annuel (2 mois offerts). Résiliable à tout moment avec 30 jours de préavis. Aucun frais caché.</p></div></div>
+  </div>
+</section>
+
+<!-- ═══ MEGA CTA ═══ -->
+<section id="cta-final">
+  <div class="cta-inner">
+    <div class="urgency-badge"><span>⚡ Offre de lancement — 7 jours gratuits sans CB</span></div>
+    <h2 class="cta-title reveal">Votre concurrent a déjà<br/>commencé à lire cette page.<br/><em>Et vous ?</em></h2>
+    <p class="cta-sub reveal">Chaque jour sans bot WhatsApp, des clients n'obtiennent pas de réponse. Ils attendent. Puis ils partent. Commencez maintenant — 7 jours pour voir la différence.</p>
+    <div class="cta-group reveal">
+      <a href="devis.html" class="btn-or">Obtenir mon devis gratuit →</a>
+      <a href="https://wa.me/22391421413?text=Bonjour%20THÉRA%20Corp%2C%20je%20veux%20démarrer%20l'essai%20gratuit" target="_blank" class="btn-ghost">💬 Écrire sur WhatsApp</a>
+    </div>
+    <p class="live-count reveal">🇲🇱 Basés à Bamako · Déployés partout au Mali</p>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="contact-wrap">
+    <span class="eyebrow reveal">Démarrez aujourd'hui</span>
+    <h2 class="sec-title reveal">Demandez votre <span style="color:var(--or)">démo gratuite</span></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-sub reveal" style="margin-bottom:72px;">Un appel de 30 minutes. Votre bot est en ligne 48h plus tard.</p>
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <h2>Parlons de votre<br/><em>business.</em></h2>
+        <p>On analyse votre situation, on propose la formule adaptée, et votre bot est en ligne en 48h. Réponse garantie sous 2h.</p>
+        <div class="contact-infos">
+          <div class="ci-row"><div class="ci-icon">📍</div><div><div class="ci-label">Adresse</div><div class="ci-value">Yirimadio, Village de Wara — Bamako, Mali</div></div></div>
+          <div class="ci-row"><div class="ci-icon">📱</div><div><div class="ci-label">WhatsApp Business</div><div class="ci-value">+223 91 42 14 13</div></div></div>
+          <div class="ci-row"><div class="ci-icon">📧</div><div><div class="ci-label">Email</div><div class="ci-value">sekoubabathera@theracorp.net</div></div></div>
+          <div class="ci-row"><div class="ci-icon">🌐</div><div><div class="ci-label">Site web</div><div class="ci-value">theracorp.net</div></div></div>
+        </div>
+      </div>
+      <div class="contact-form reveal d2">
+        <h3 class="cf-title">Demande de démo gratuite</h3>
+        <p class="cf-sub">7 jours gratuits · Sans engagement · Réponse sous 2h</p>
+        <div class="fg2">
+          <div class="fg"><label>Prénom</label><input type="text" id="fp" placeholder="Moussa"/></div>
+          <div class="fg"><label>Nom</label><input type="text" id="fn" placeholder="Koné"/></div>
+        </div>
+        <div class="fg"><label>WhatsApp</label><input type="tel" id="ft" placeholder="+223 XX XX XX XX"/></div>
+        <div class="fg"><label>Entreprise</label><input type="text" id="fe" placeholder="Pharmacie Djourou, Restaurant Wari..."/></div>
+        <div class="fg">
+          <label>Secteur</label>
+          <select id="fs">
+            <option value="" disabled selected>Choisissez votre secteur</option>
+            <option>💊 Pharmacie</option>
+            <option>🍽️ Restaurant / Alimentation</option>
+            <option>🛒 Boutique / Commerce</option>
+            <option>🏥 Clinique / Santé</option>
+            <option>🏫 École / Formation</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message (optionnel)</label><textarea id="fm" placeholder="Décrivez rapidement votre besoin..."></textarea></div>
+        <button class="sbtn" onclick="sendWA()">Réserver ma démo gratuite →</button>
+        <a href="https://wa.me/22391421413" target="_blank" class="wa-btn-form">💬 &nbsp;Écrire directement sur WhatsApp</a>
+        <p class="f-legal">En soumettant ce formulaire vous acceptez notre <a href="privacy-policy.html">politique de confidentialité</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="fb-brand">
+      <span class="logo">TH<span class="acc">É</span>RA<sup>CORP</sup></span>
+      <span class="tagline">"L'IA qui travaille pendant que vous dormez"</span>
+      <p>Agence spécialisée en chatbots WhatsApp et IA pour les PME du Mali. Bambara · Orange Money · 24h/24.</p>
+      <div class="addr">📍 Yirimadio, Village de Wara<br/>Bamako · Mali 🇲🇱<br/>+223 91 42 14 13</div>
+    </div>
+    <div class="fc">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="devis.html">Devis gratuit</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Bot Pharmacie</a></li>
+        <li><a href="services.html">Bot Restaurant</a></li>
+        <li><a href="services.html">Bot Boutique</a></li>
+        <li><a href="services.html">Pack Marché</a></li>
+        <li><a href="services.html">Bot Bambara</a></li>
+        <li><a href="services.html">Orange Money Chat</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Légal & Contact</h4>
+      <ul>
+        <li><a href="privacy-policy.html">Confidentialité</a></li>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="tel:+22391421413">+223 91 42 14 13</a></li>
+        <li><a href="mailto:sekoubabathera@theracorp.net">sekoubabathera@theracorp.net</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 THÉRA Corp — theracorp.net · Mali 🇲🇱. Tous droits réservés.</p>
+    <div class="footer-links">
+      <a href="privacy-policy.html">Confidentialité</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── CURSOR ── */
+const cDot=document.getElementById('cDot'),cRing=document.getElementById('cRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cDot.style.left=mx+'px';cDot.style.top=my+'px';});
+(function animR(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;cRing.style.left=rx+'px';cRing.style.top=ry+'px';requestAnimationFrame(animR);})();
+document.querySelectorAll('a,button,.tc,.dc,.testi,[onclick]').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('hov'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
+});
+
+/* ── SCROLL ── */
+window.addEventListener('scroll',()=>{
+  const p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
+  document.getElementById('spb').style.width=p+'%';
+  document.getElementById('navbar').classList.toggle('scr',window.scrollY>60);
+  document.getElementById('backTop').classList.toggle('vis',window.scrollY>400);
+});
+
+/* ── NAV MOBILE ── */
+function toggleMenu(){
+  const nl=document.getElementById('navLinks');nl.classList.toggle('open');
+  if(!document.getElementById('_mns')){const s=document.createElement('style');s.id='_mns';s.textContent='#navLinks.open{display:flex!important;flex-direction:column;position:fixed;top:80px;left:0;right:0;bottom:0;background:rgba(8,10,20,.98);backdrop-filter:blur(20px);align-items:center;justify-content:center;gap:32px;z-index:999}#navLinks.open a{font-size:1.1rem!important}';document.head.appendChild(s);}
+}
+
+/* ── CANVAS PARTICLES ── */
+const cv=document.getElementById('pc'),cx=cv.getContext('2d');
+function rC(){cv.width=window.innerWidth;cv.height=window.innerHeight;}rC();window.addEventListener('resize',rC);
+const pts=[];
+class Pt{constructor(){this.reset();}reset(){this.x=Math.random()*cv.width;this.y=Math.random()*cv.height;this.s=Math.random()*1.8+.3;this.vx=(Math.random()-.5)*.35;this.vy=(Math.random()-.5)*.35;this.a=Math.random()*.5+.1;this.p=Math.random()*Math.PI*2;}update(){this.x+=this.vx;this.y+=this.vy;this.p+=.018;if(this.x<0||this.x>cv.width||this.y<0||this.y>cv.height)this.reset();}draw(){const a=this.a*(.7+.3*Math.sin(this.p));cx.beginPath();cx.arc(this.x,this.y,this.s,0,Math.PI*2);cx.fillStyle=`rgba(212,175,55,${a})`;cx.fill();}}
+for(let i=0;i<120;i++)pts.push(new Pt());
+(function animP(){cx.clearRect(0,0,cv.width,cv.height);pts.forEach(p=>{p.update();p.draw();});requestAnimationFrame(animP);})();
+
+/* ── HERO CHAT DEMO ── */
+const heroMsgs=[
+  {type:'recv',text:'Bonjour, avez-vous de l\'Amoxicilline 500mg ?',delay:1000},
+  {type:'typing',delay:1800},
+  {type:'sent',text:'Bonjour ! 😊 Oui, Amoxicilline 500mg disponible\n\n💊 Prix : 3 500 FCFA\n📦 Quantité : En stock\n\nVoulez-vous réserver ?',delay:2800},
+  {type:'recv',text:'Oui ! Je viens à 17h',delay:3600},
+  {type:'typing',delay:4200},
+  {type:'sent',text:'✅ Réservé pour 17h !\nRéférence : #REF-4421\n\nÀ tout à l\'heure 🙏',delay:5000},
+];
+const chatBody=document.getElementById('heroChatBody');
+let heroStarted=false;
+function startHeroChat(){
+  if(heroStarted)return;heroStarted=true;
+  heroMsgs.forEach(m=>{
+    if(m.type==='typing'){
+      setTimeout(()=>{
+        const t=document.createElement('div');t.className='wm-typing';t.id='hTyping';
+        t.innerHTML='<span></span><span></span><span></span>';
+        chatBody.appendChild(t);setTimeout(()=>t.classList.add('show'),20);
+      },m.delay);
+    } else {
+      setTimeout(()=>{
+        const ht=document.getElementById('hTyping');if(ht)ht.remove();
+        const el=document.createElement('div');el.className='wm '+m.type;
+        el.innerHTML=m.text.replace(/\n/g,'<br/>');
+        const ts=document.createElement('span');ts.className='wm-time';
+        ts.textContent=(m.type==='sent'?'✓✓ ':'')+new Date().getHours()+':'+String(new Date().getMinutes()).padStart(2,'0');
+        el.appendChild(ts);chatBody.appendChild(el);
+        setTimeout(()=>el.classList.add('show'),20);
+        chatBody.scrollTop=chatBody.scrollHeight;
+      },m.delay);
+    }
+  });
+  // Loop after last message
+  setTimeout(()=>{heroStarted=false;chatBody.innerHTML='';startHeroChat();},9000);
+}
+setTimeout(startHeroChat,1200);
+
+/* ── TYPEWRITER ── */
+const phrases=['une vente perdue.','un client chez votre concurrent.','de l\'argent jeté.','une opportunité manquée.','votre concurrent qui gagne.'];
+let pi=0,ci=0,del=false;const tel=document.getElementById('typedText');
+function tw(){const cur=phrases[pi];if(del){tel.textContent=cur.substring(0,ci-1);ci--;}else{tel.textContent=cur.substring(0,ci+1);ci++;}if(!del&&ci===cur.length)setTimeout(()=>{del=true;},2200);else if(del&&ci===0){del=false;pi=(pi+1)%phrases.length;}setTimeout(tw,del?52:82);}
+setTimeout(tw,2000);
+
+/* ── REVEAL ── */
+const ro=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('v'),i*70);});},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+/* ── COUNT UP ── */
+function animCount(el,t,d=2000){let s=0;const step=t/(d/16);const tm=setInterval(()=>{s+=step;if(s>=t){el.textContent=t;clearInterval(tm);}else{el.textContent=Math.floor(s);}},16);}
+const co=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.count-up,[data-target]').forEach(el=>{const t=parseInt(el.getAttribute('data-target'));if(t)animCount(el,t);});co.unobserve(e.target);}});},{threshold:.35});
+document.querySelectorAll('#compteurs,#hero').forEach(el=>co.observe(el));
+
+/* ── PERTES COUNTER (removed) ── */
+
+/* ── TILT TARIFS ── */
+document.querySelectorAll('.tc').forEach(c=>{
+  c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();const x=((e.clientX-r.left)/r.width-.5)*8;const y=((e.clientY-r.top)/r.height-.5)*-8;c.style.transform=`perspective(900px) rotateY(${x}deg) rotateX(${y}deg) translateY(-6px)`;});
+  c.addEventListener('mouseleave',()=>{c.style.transform='';});
+});
+
+/* ── ANNUAL TOGGLE ── */
+let isAnnual=false;
+const base={ess:15000,pro:32000,biz:55000,marc:7000};
+function toggleAnnual(){
+  isAnnual=!isAnnual;
+  document.getElementById('tglSwitch').classList.toggle('active',isAnnual);
+  document.getElementById('tl-m').classList.toggle('on',!isAnnual);
+  document.getElementById('tl-a').classList.toggle('on',isAnnual);
+  document.getElementById('saveBadge').style.display=isAnnual?'inline-block':'none';
+  const m=isAnnual?(10/12):1;const fmt=n=>Math.round(n).toLocaleString('fr-FR');
+  document.getElementById('p-ess').innerHTML=fmt(base.ess*m)+' <span>FCFA/mois</span>';
+  document.getElementById('p-pro').innerHTML=fmt(base.pro*m)+' <span>FCFA/mois</span>';
+  document.getElementById('p-biz').innerHTML=fmt(base.biz*m)+' <span>FCFA/mois</span>';
+  document.getElementById('p-marc').innerHTML=fmt(base.marc*m)+' <span>FCFA/bout./mois</span>';
+}
+
+/* ── FAQ ── */
+function toggleFaq(btn){
+  const item=btn.parentElement;const open=item.classList.contains('open');
+  document.querySelectorAll('.fi.open').forEach(i=>{i.classList.remove('open');i.querySelector('.fa').style.maxHeight='0';i.querySelector('[aria-expanded]').setAttribute('aria-expanded','false');});
+  if(!open){item.classList.add('open');item.querySelector('.fa').style.maxHeight=item.querySelector('.fa').scrollHeight+'px';btn.setAttribute('aria-expanded','true');}
+}
+
+/* ── PLACEHOLDER (live counter removed) ── */
+
+/* ── WHATSAPP FORM ── */
+function sendWA(){
+  const p=document.getElementById('fp').value.trim();
+  const n=document.getElementById('fn').value.trim();
+  const t=document.getElementById('ft').value.trim()||'Non renseigné';
+  const e=document.getElementById('fe').value.trim()||'Non renseigné';
+  const s=document.getElementById('fs');
+  const sec=s.options[s.selectedIndex]?.text||'Non renseigné';
+  const m=document.getElementById('fm').value.trim()||'—';
+  const nm=[p,n].filter(Boolean).join(' ')||'Prospect';
+  const txt=encodeURIComponent(`Bonjour THÉRA Corp 👋\n\n━━━━━━━━━━━━━━━━\n🚀 *DEMANDE DE DÉMO*\n━━━━━━━━━━━━━━━━\n\n👤 *Nom :* ${nm}\n📱 *Tél :* ${t}\n🏢 *Entreprise :* ${e}\n📂 *Secteur :* ${sec}\n\n💬 *Projet :*\n${m}\n\n_theracorp.net_`);
+  window.open(`https://wa.me/22391421413?text=${txt}`,'_blank');
+}
+
+/* ── COOKIES ── */
+if(localStorage.getItem('tc_cookies'))document.getElementById('cookieBar').classList.add('hidden');
+function acceptCookies(){localStorage.setItem('tc_cookies','accepted');document.getElementById('cookieBar').classList.add('hidden');}
+function refuseCookies(){localStorage.setItem('tc_cookies','refused');document.getElementById('cookieBar').classList.add('hidden');}
+</script>
+</body>
+</html>
